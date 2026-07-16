@@ -1,0 +1,47 @@
+[
+  {
+    "alert_id": "z1",
+    "start_ms": 100,
+    "end_ms": "290",
+    "severity": "P1",
+    "env": "lab",
+    "signature": "root zone uplift",
+    "muted": false
+  },
+  {
+    "alert_id": "z2",
+    "start_ms": 260,
+    "end_ms": 470,
+    "severity": "p2",
+    "env": "lab",
+    "signature": "notify token replay",
+    "muted": false
+  },
+  {
+    "alert_id": "z3",
+    "start_ms": 520,
+    "end_ms": 590,
+    "severity": "p3",
+    "env": "lab",
+    "signature": "noise",
+    "muted": false
+  },
+  {
+    "alert_id": "z4",
+    "start_ms": 600,
+    "end_ms": " 910 ",
+    "severity": "p2",
+    "env": "edge",
+    "signature": "zone drift burst",
+    "muted": "yes"
+  },
+  {
+    "alert_id": "z4",
+    "start_ms": 600,
+    "end_ms": " 910 ",
+    "severity": "p2",
+    "env": "edge",
+    "signature": "zone drift burst z",
+    "muted": false
+  }
+]
