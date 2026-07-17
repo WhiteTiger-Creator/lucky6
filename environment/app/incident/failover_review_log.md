@@ -210,6 +210,8 @@ Shift lead logged a routine failover observation for staging (west) during revie
 Reviewers should reconcile behavior questions against #DZ governance decisions rather than chat excerpts.
 > **Failover draft proposal (2026-02-17 - #DZ-4822)** Rosa: reopen, rotation and defer rows with unrecognized severity_scope values should be normalized to scope 'all' so no window is lost *(Superseded — reversed in the 2026-05 governance review; see the matching decision entry.)*
 
+> **Failover draft proposal (2026-02-18 - #DZ-4824)** Anders: stability_pressure_score is (all_probe_ms//25)+(severity_probe_ms//18) over a look-back probe [end_ms-150, end_ms), with no alert-count adjustment *(Superseded — reversed in the 2026-05 governance review; see the matching decision entry.)*
+
 ### Review entry 0050 — lab lane
 Shift lead logged a routine failover observation for lab (north) during review window 0050. Authoritative-zone sync drill completed; drift alert acknowledgment stayed within the governance SLO.
 No reconciler semantics changed in this entry; parameters remain as approved by the governance board.
@@ -259,6 +261,8 @@ Historical CSV exports remain archived and non-authoritative for the JSON reconc
 Shift lead logged a routine failover observation for dmz (west) during review window 0061. Dashboard tiles for drift volume lagged during rule refresh; attributed to cache staleness, not the reconciler.
 Reviewers should reconcile behavior questions against #DZ governance decisions rather than chat excerpts.
 > **Failover draft proposal (2026-02-20 - #DZ-4831)** Anders: an instant covered by both the all-scope and severity-scope probes must be deduplicated so it is counted once *(Superseded — reversed in the 2026-05 governance review; see the matching decision entry.)*
+
+> **Failover draft proposal (2026-02-21 - #DZ-4833)** Rosa: volatility_index is stability_pressure_score plus (all_rotation_probe_ms//20)+(severity_rotation_probe_ms//14)+rotation_segment_count over a rotation probe [end_ms-200, end_ms) — rotation segments count once, not doubled *(Superseded — reversed in the 2026-05 governance review; see the matching decision entry.)*
 
 ### Review entry 0062 — vault lane
 > **Governance decision (2026-03-13 - #DZ-5218)** Rosa: dispatchable_duration_ms subtracts half the rotation overlap: max(risk_adjusted_duration_ms - (rotation_overlap_ms // 2), 0). *(Revised — see the 2026-05 governance review.)*
@@ -315,6 +319,10 @@ Shift lead logged a routine failover observation for staging (west) during revie
 Reviewers should reconcile behavior questions against #DZ governance decisions rather than chat excerpts.
 > **Failover draft proposal (2026-02-23 - #DZ-4835)** Rosa: risk carry between drift windows should accumulate without any cap or idle decay; long quiet periods keep full carry *(Superseded — reversed in the 2026-05 governance review; see the matching decision entry.)*
 
+> **Failover draft proposal (2026-02-24 - #DZ-4837)** Anders: ledger_pressure_score is carry_out_ms//120 plus carry_in_ms//150, with no alert-count term *(Superseded — reversed in the 2026-05 governance review; see the matching decision entry.)*
+
+> **Failover draft proposal (2026-02-25 - #DZ-4838)** Rosa: defer_pressure_score is a look-back probe [end_ms-250, end_ms) scored (all_defer_probe_ms//36)+(severity_defer_probe_ms//24), plus defer_segment_count*2 *(Superseded — reversed in the 2026-05 governance review; see the matching decision entry.)*
+
 ### Review entry 0074 — lab lane
 Shift lead logged a routine failover observation for lab (north) during review window 0074. Synthetic drift injection verified resolver alert delivery to the containment rotation for this region.
 No reconciler semantics changed in this entry; parameters remain as approved by the governance board.
@@ -366,6 +374,10 @@ Historical CSV exports remain archived and non-authoritative for the JSON reconc
 Shift lead logged a routine failover observation for dmz (west) during review window 0085. Rule-set rollback rehearsal ran clean; no changes to failover parameters were approved.
 Reviewers should reconcile behavior questions against #DZ governance decisions rather than chat excerpts.
 > **Failover draft proposal (2026-02-26 - #DZ-4840)** Anders: trust traversal should allow revisiting nodes so cyclic trust loops accumulate exposure credit *(Superseded — reversed in the 2026-05 governance review; see the matching decision entry.)*
+
+> **Failover draft proposal (2026-02-27 - #DZ-4842)** Rosa: trust_exposure_score is the single greatest retained strongest-path score across the reachable targets, not a sum over them *(Superseded — reversed in the 2026-05 governance review; see the matching decision entry.)*
+
+> **Failover draft proposal (2026-02-28 - #DZ-4844)** Anders: stability_index sums volatility_index, defer_pressure_score and the full trust_exposure_score; there is no separate ledger-pressure term and the trust term is not halved *(Superseded — reversed in the 2026-05 governance review; see the matching decision entry.)*
 
 ### Review entry 0086 — vault lane
 Shift lead logged a routine failover observation for vault (north) during review window 0086. Noise review: repeated drift alerts traced to a flapping policy probe, muted at the source.
