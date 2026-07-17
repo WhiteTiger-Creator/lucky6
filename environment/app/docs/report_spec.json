@@ -187,7 +187,8 @@
     "window_digest_checksum": "sha256('|'.join(window_digest values in final queue order)) lowercase 64 hex chars",
     "ledger_checksum": "SHA-256 of checksum_serialization_contract ledger_rows",
     "trust_path_digest_checksum": "sha256('|'.join(trust_path_digest values in final queue order)) lowercase 64 hex chars",
-    "schema_version_note": "Emit summary.json schema_version exactly as this summary_json.schema_version value ('dns-zone-drift-v1'). Do NOT use the report_spec top-level 'version' field (2.0), which is the contract document version, not the output schema version."
+    "schema_version_note": "Emit summary.json schema_version exactly as this summary_json.schema_version value ('dns-zone-drift-v1'). Do NOT use the report_spec top-level 'version' field (2.0), which is the contract document version, not the output schema version.",
+    "severity_counts_note": "severity_counts always contains all four keys in severity_counts_key_order, including levels with a zero count."
   },
   "drift_windows_json": {
     "shape": "flat map {env: [window, ...]}",
