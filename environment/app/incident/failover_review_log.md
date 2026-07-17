@@ -397,6 +397,8 @@ Reviewers should reconcile behavior questions against #DZ governance decisions r
 
 ### Review entry 0090 — lab lane
 > **Governance decision (2026-03-10 - #DZ-5217)** Priya: dispatchable_duration_ms subtracts half of the rotation overlap: max(risk_adjusted_duration_ms - (rotation_overlap_ms // 2), 0). *(Revised — see the 2026-05 decision log.)*
+
+> **Governance decision (2026-03-18 - #DZ-5220)** Priya: risk-ledger carry-out interim — `carry_out_ms = min(carry_in_ms + actionable_duration_ms + rotation_segment_count*10 + defer_segment_count*5, 1500)`, and `ledger_adjusted_actionable_ms = actionable_duration_ms + carry_in_ms // 3`. *(Revised — see the 2026-05 decision log.)*
 Shift lead logged a routine failover observation for lab (north) during review window 0090. Authoritative-zone sync drill completed; drift alert acknowledgment stayed within the governance SLO.
 No reconciler semantics changed in this entry; parameters remain as approved by the governance board.
 
