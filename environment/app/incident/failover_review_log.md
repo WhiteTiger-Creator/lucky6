@@ -251,6 +251,7 @@ Shift lead logged a routine failover observation for edge (central) during revie
 Thread archived; see the #DZ decision entries for anything affecting reconciler behavior.
 
 ### Review entry 0060 — core lane
+> **Governance decision (2026-03-10 - #DZ-5209)** Rosa: dedupe keeps the first-seen row per alert_id in input order; end_ms and severity rank do not override that. *(Revised — see the 2026-05 governance review.)*
 Shift lead logged a routine failover observation for core (east) during review window 0060. Authoritative-zone sync drill completed; drift alert acknowledgment stayed within the governance SLO.
 Historical CSV exports remain archived and non-authoritative for the JSON reconciler acceptance.
 
@@ -260,6 +261,7 @@ Reviewers should reconcile behavior questions against #DZ governance decisions r
 > **Failover draft proposal (2026-02-20 - #DZ-4831)** Anders: an instant covered by both the all-scope and severity-scope probes must be deduplicated so it is counted once *(Superseded — reversed in the 2026-05 governance review; see the matching decision entry.)*
 
 ### Review entry 0062 — vault lane
+> **Governance decision (2026-03-13 - #DZ-5218)** Rosa: dispatchable_duration_ms subtracts half the rotation overlap: max(risk_adjusted_duration_ms - (rotation_overlap_ms // 2), 0). *(Revised — see the 2026-05 governance review.)*
 Shift lead logged a routine failover observation for vault (north) during review window 0062. Change-board reviewed stale exception approvals; owners pinged before the next failover cycle.
 No reconciler semantics changed in this entry; parameters remain as approved by the governance board.
 
@@ -268,6 +270,7 @@ Shift lead logged a routine failover observation for fabric (central) during rev
 Thread archived; see the #DZ decision entries for anything affecting reconciler behavior.
 
 ### Review entry 0064 — prod lane
+> **Governance decision (2026-03-15 - #DZ-5219)** Rosa: volatility_index is stability_pressure_score plus rotation_segment_count*2, with no probe-window terms. *(Revised — see the 2026-05 governance review.)*
 Shift lead logged a routine failover observation for prod (east) during review window 0064. Synthetic drift injection verified resolver alert delivery to the containment rotation for this region.
 Historical CSV exports remain archived and non-authoritative for the JSON reconciler acceptance.
 
@@ -276,6 +279,7 @@ Shift lead logged a routine failover observation for staging (west) during revie
 Reviewers should reconcile behavior questions against #DZ governance decisions rather than chat excerpts.
 
 ### Review entry 0066 — lab lane
+> **Governance decision (2026-03-17 - #DZ-5212)** Rosa: ledger_pressure_score is carry_out_ms // 100 only; carry_in and alert-count contributions are dropped. *(Revised — see the 2026-05 governance review.)*
 Shift lead logged a routine failover observation for lab (north) during review window 0066. Noise review: repeated drift alerts traced to a flapping policy probe, muted at the source.
 No reconciler semantics changed in this entry; parameters remain as approved by the governance board.
 
@@ -284,6 +288,7 @@ Shift lead logged a routine failover observation for edge (central) during revie
 Thread archived; see the #DZ decision entries for anything affecting reconciler behavior.
 
 ### Review entry 0068 — core lane
+> **Governance decision (2026-03-19 - #DZ-5216)** Rosa: stability_index is volatility_index plus defer_pressure_score only; the ledger pressure term is not part of it. *(Revised — see the 2026-05 governance review.)*
 Shift lead logged a routine failover observation for core (east) during review window 0068. Vendor ticket on zone-transfer retries closed; delivery within contractual budget.
 Historical CSV exports remain archived and non-authoritative for the JSON reconciler acceptance.
 
@@ -567,7 +572,7 @@ Thread archived; see the #DZ decision entries for anything affecting reconciler 
 ### Review entry 0136 — prod lane
 Shift lead logged a routine failover observation for prod (east) during review window 0136. Noise review: repeated drift alerts traced to a flapping policy probe, muted at the source.
 Historical CSV exports remain archived and non-authoritative for the JSON reconciler acceptance.
-> **Governance decision (2026-05-02 - #DZ-5302)** Yusuf: deduplication by alert_id: keep highest end_ms; tie-break by severity rank p1>p2>p3>p4, then longer normalized signature, then lexicographically larger normalized env; if still tied keep first seen row in input order. This supersedes #DZ-4815.
+> **Governance decision (2026-05-02 - #DZ-5302)** Yusuf: deduplication by alert_id (final, revising #DZ-5209 which kept the first-seen row): keep highest end_ms; tie-break by severity rank p1>p2>p3>p4, then longer normalized signature, then lexicographically larger normalized env; if still tied keep first seen row in input order. This supersedes #DZ-4815.
 
 ### Review entry 0137 — staging lane
 Shift lead logged a routine failover observation for staging (west) during review window 0137. Quarterly access recertification touched this lane; no compile-relevant configuration changed.
@@ -907,7 +912,7 @@ Thread archived; see the #DZ decision entries for anything affecting reconciler 
 ### Review entry 0220 — core lane
 Shift lead logged a routine failover observation for core (east) during review window 0220. Authoritative-zone sync drill completed; drift alert acknowledgment stayed within the governance SLO.
 Historical CSV exports remain archived and non-authoritative for the JSON reconciler acceptance.
-> **Governance decision (2026-05-04 - #DZ-5308)** Priya: rotation layer: scope allowlist ['all', 'p1', 'p2']; normalize env/scope/start/end, keep rows whose severity_scope is in scope_values, drop end<=start, compact overlap/touch intervals per (env,severity_scope). Matching scopes: {all,max_severity} for each window; if max_severity is p2 and (env,p2) has no compacted intervals, borrow (env,p1) as the severity scope fallback. Union: collect overlap segments from matching scopes then compact/union those segments to compute rotation_overlap_ms and rotation_segment_count. dispatchable_duration_ms = max(risk_adjusted_duration_ms - (rotation_overlap_ms // 3), 0) — the //3 divisor is final and revises #DZ-5217. volatility_index: stability_pressure_score + (all_rotation_probe_ms//24) + (severity_rotation_probe_ms//16) + (rotation_segment_count*2) where probe is [end_ms-240,end_ms+1).
+> **Governance decision (2026-05-04 - #DZ-5308)** Priya: rotation layer: scope allowlist ['all', 'p1', 'p2']; normalize env/scope/start/end, keep rows whose severity_scope is in scope_values, drop end<=start, compact overlap/touch intervals per (env,severity_scope). Matching scopes: {all,max_severity} for each window; if max_severity is p2 and (env,p2) has no compacted intervals, borrow (env,p1) as the severity scope fallback. Union: collect overlap segments from matching scopes then compact/union those segments to compute rotation_overlap_ms and rotation_segment_count. dispatchable_duration_ms = max(risk_adjusted_duration_ms - (rotation_overlap_ms // 3), 0) — the //3 divisor is final and revises #DZ-5217 and the //2 form in #DZ-5218. volatility_index (final, revising #DZ-5219 which dropped the probe terms): stability_pressure_score + (all_rotation_probe_ms//24) + (severity_rotation_probe_ms//16) + (rotation_segment_count*2) where probe is [end_ms-240,end_ms+1).
 
 ### Review entry 0221 — dmz lane
 Shift lead logged a routine failover observation for dmz (west) during review window 0221. Dashboard tiles for drift volume lagged during rule refresh; attributed to cache staleness, not the reconciler.
@@ -1247,7 +1252,7 @@ Thread archived; see the #DZ decision entries for anything affecting reconciler 
 ### Review entry 0304 — prod lane
 Shift lead logged a routine failover observation for prod (east) during review window 0304. Synthetic drift injection verified resolver alert delivery to the containment rotation for this region.
 Historical CSV exports remain archived and non-authoritative for the JSON reconciler acceptance.
-> **Governance decision (2026-05-06 - #DZ-5314)** Yusuf: ledger scoring: ledger_pressure_score = (carry_out_ms//80)+(carry_in_ms//120)+max(alert_count-1,0); stability_index = volatility_index+defer_pressure_score+ledger_pressure_score. Worked example, no attenuation: lab [100,400): actionable=300, idle_gap=0, carry_in=0, carry_out=min(0+300,2000)=300, ledger_adjusted=300 Then: lab [600,850): idle_gap=200, carry_in=max(300-(200//2),0)=200, actionable=250, ledger_adjusted=250+(200//4)=300, carry_out=min(200+250,2000)=450 Second window ledger pressure: (450//80)+(200//120)+max(1-1,0)=6.
+> **Governance decision (2026-05-06 - #DZ-5314)** Yusuf: ledger scoring (ledger_pressure_score is final, revising #DZ-5212): ledger_pressure_score = (carry_out_ms//80)+(carry_in_ms//120)+max(alert_count-1,0); stability_index = volatility_index+defer_pressure_score+ledger_pressure_score — the ledger term is included, revising #DZ-5216. Worked example, no attenuation: lab [100,400): actionable=300, idle_gap=0, carry_in=0, carry_out=min(0+300,2000)=300, ledger_adjusted=300 Then: lab [600,850): idle_gap=200, carry_in=max(300-(200//2),0)=200, actionable=250, ledger_adjusted=250+(200//4)=300, carry_out=min(200+250,2000)=450 Second window ledger pressure: (450//80)+(200//120)+max(1-1,0)=6.
 
 ### Review entry 0305 — staging lane
 Shift lead logged a routine failover observation for staging (west) during review window 0305. Rule-set rollback rehearsal ran clean; no changes to failover parameters were approved.
@@ -3846,4 +3851,3 @@ No reconciler semantics changed in this entry; parameters remain as approved by 
 ### Review entry 0951 — fabric lane
 Shift lead logged a routine failover observation for fabric (central) during review window 0951. Vendor ticket on zone-transfer retries closed; delivery within contractual budget.
 Reviewers should reconcile behavior questions against #DZ governance decisions rather than chat excerpts.
-
