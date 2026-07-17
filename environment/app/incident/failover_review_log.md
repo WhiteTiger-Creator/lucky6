@@ -297,6 +297,7 @@ Shift lead logged a routine failover observation for dmz (west) during review wi
 Reviewers should reconcile behavior questions against #DZ governance decisions rather than chat excerpts.
 
 ### Review entry 0070 — vault lane
+> **Governance decision (2026-03-20 - #DZ-5223)** Rosa: defer_pressure_score is just defer_segment_count; the all-scope and severity-scope probe terms are dropped. *(Revised — see the 2026-05 governance review.)*
 Shift lead logged a routine failover observation for vault (north) during review window 0070. Authoritative-zone sync drill completed; drift alert acknowledgment stayed within the governance SLO.
 No reconciler semantics changed in this entry; parameters remain as approved by the governance board.
 
@@ -305,6 +306,7 @@ Shift lead logged a routine failover observation for fabric (central) during rev
 Thread archived; see the #DZ decision entries for anything affecting reconciler behavior.
 
 ### Review entry 0072 — prod lane
+> **Governance decision (2026-03-22 - #DZ-5225)** Rosa: stability_index folds in the full trust_exposure_score with no halving. *(Revised — see the 2026-05 governance review.)*
 Shift lead logged a routine failover observation for prod (east) during review window 0072. Change-board reviewed stale exception approvals; owners pinged before the next failover cycle.
 Historical CSV exports remain archived and non-authoritative for the JSON reconciler acceptance.
 
@@ -997,7 +999,7 @@ Historical CSV exports remain archived and non-authoritative for the JSON reconc
 ### Review entry 0241 — staging lane
 Shift lead logged a routine failover observation for staging (west) during review window 0241. Dashboard tiles for drift volume lagged during rule refresh; attributed to cache staleness, not the reconciler.
 Reviewers should reconcile behavior questions against #DZ governance decisions rather than chat excerpts.
-> **Governance decision (2026-05-05 - #DZ-5310)** Marek: defer layer: scope allowlist ['all', 'p1', 'p2']; normalize env/scope/start/end, keep rows whose severity_scope is in scope_values, drop end<=start, compact overlap/touch intervals per (env,severity_scope). Matching scopes: {all,max_severity} for each window; if max_severity is p2 and (env,p2) has no compacted intervals, borrow (env,p1) as the severity scope fallback. Union: collect overlap segments from matching scopes then compact/union those segments to compute defer_overlap_ms and defer_segment_count. actionable_duration_ms = max(dispatchable_duration_ms - (defer_overlap_ms // 4), 0) — the //4 divisor is final and revises #DZ-5221. defer_pressure_score: probe [end_ms-300,end_ms+1): (all_defer_probe_ms//40)+(severity_defer_probe_ms//28)+defer_segment_count.
+> **Governance decision (2026-05-05 - #DZ-5310)** Marek: defer layer: scope allowlist ['all', 'p1', 'p2']; normalize env/scope/start/end, keep rows whose severity_scope is in scope_values, drop end<=start, compact overlap/touch intervals per (env,severity_scope). Matching scopes: {all,max_severity} for each window; if max_severity is p2 and (env,p2) has no compacted intervals, borrow (env,p1) as the severity scope fallback. Union: collect overlap segments from matching scopes then compact/union those segments to compute defer_overlap_ms and defer_segment_count. actionable_duration_ms = max(dispatchable_duration_ms - (defer_overlap_ms // 4), 0) — the //4 divisor is final and revises #DZ-5221. defer_pressure_score (final, revising #DZ-5223 which dropped the probe terms): probe [end_ms-300,end_ms+1): (all_defer_probe_ms//40)+(severity_defer_probe_ms//28)+defer_segment_count.
 
 ### Review entry 0242 — lab lane
 Shift lead logged a routine failover observation for lab (north) during review window 0242. Change-board reviewed stale exception approvals; owners pinged before the next failover cycle.
@@ -1592,7 +1594,7 @@ Thread archived; see the #DZ decision entries for anything affecting reconciler 
 ### Review entry 0388 — core lane
 Shift lead logged a routine failover observation for core (east) during review window 0388. Vendor ticket on zone-transfer retries closed; delivery within contractual budget.
 Historical CSV exports remain archived and non-authoritative for the JSON reconciler acceptance.
-> **Governance decision (2026-05-08 - #DZ-5320)** Priya: trust integration: stability_index=volatility_index+defer_pressure_score+ledger_pressure_score+(trust_exposure_score//2). Priority integration: critical when trust_exposure_score>=24; otherwise high when trust_exposure_score>=12, in addition to existing rules.
+> **Governance decision (2026-05-08 - #DZ-5320)** Priya: trust integration (final, revising #DZ-5225 which used the full trust term): stability_index=volatility_index+defer_pressure_score+ledger_pressure_score+(trust_exposure_score//2). Priority integration: critical when trust_exposure_score>=24; otherwise high when trust_exposure_score>=12, in addition to existing rules.
 
 ### Review entry 0389 — dmz lane
 Shift lead logged a routine failover observation for dmz (west) during review window 0389. Capacity review noted rising alert volume; thresholds unchanged outside the governance process.
