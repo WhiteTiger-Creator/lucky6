@@ -214,7 +214,7 @@ def test_windows_schema_and_sorting(primary_outputs):
                 row["risk_adjusted_duration_ms"] - (row["rotation_overlap_ms"] // 3), 0
             )
             assert row["actionable_duration_ms"] == max(
-                row["dispatchable_duration_ms"] - (row["defer_overlap_ms"] // 4), 0
+                row["dispatchable_duration_ms"] - (-(-row["defer_overlap_ms"] // 4)), 0
             )
             assert row["ledger_adjusted_actionable_ms"] == (
                 row["actionable_duration_ms"] + (row["carry_in_ms"] // 4)

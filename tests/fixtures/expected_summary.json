@@ -48,8 +48,8 @@
       "total_dispatchable_duration_ms": 9670,
       "total_defer_overlap_ms": 400,
       "total_defer_segment_count": 8,
-      "total_actionable_duration_ms": 9574,
-      "total_ledger_adjusted_actionable_ms": 10291,
+      "total_actionable_duration_ms": 9566,
+      "total_ledger_adjusted_actionable_ms": 10281,
       "longest_window_ms": 600,
       "queued_window_count": 26,
       "muted_excluded_count": 2,
@@ -61,14 +61,14 @@
       "max_carry_out_ms": 813,
       "max_stability_index": 28,
       "canonical_alert_checksum": "a57b7ac69b3f18196296c1e3853a7ac8100292022c1e877281f8a617fdd8e6e5",
-      "queue_hash_checksum": "48954dc2118ed815ea87ee75a6265fa6b39d4e2b2856b4310179b7dad014bfb6",
+      "queue_hash_checksum": "88d60a92e5030764c8e383b2bbf34bade6d7bc60a0b4540a5b11d9ab4ba96f20",
       "freeze_compaction_checksum": "63f672e228d497414e811672f77c7e7bec555c6178a6b866b8a393d7c64a3f00",
       "reopen_compaction_checksum": "07ccc158894c91900435104e2ed6979d41b3d19aca0623192e2bce049f206834",
       "rotation_compaction_checksum": "2b54a1c8ae0e573585b21ca2aafbd851f16760c14ad9ed996f6ce3fb63b87c08",
       "defer_compaction_checksum": "198df340199d465fde07d56c8e66b081985535d359a37943ca0c05cd738cd3b2",
       "trust_edge_checksum": "9e21caca5a5a1ec1e5e26420bd0acd2cfc3037fc6738d97f5e6ac48042826f19",
-      "window_digest_checksum": "fd8b64435df7e73f1a51188a200de111f3743af76f7e82f9663f2edf694e2cdd",
-      "ledger_checksum": "a20880e6e96ede2cbb4f3d903b83275d8c1b4bf4593c5633b91c30733ca5e3f5",
+      "window_digest_checksum": "8373585929b2fe56f44ca0bcd458d76d6f79606aad41ef2ffcaba844e72d3f1d",
+      "ledger_checksum": "74bd3d22fc33387e306f04c02adcc1acb01e79add5934f10d73ae0bd36c5654b",
       "trust_path_digest_checksum": "fafb0b472e78ff96d95441ee3adb8143a5b180f30ca2885a0f994a1bf16ab723"
     },
     "windows": {
@@ -128,7 +128,7 @@
           "dispatchable_duration_ms": 265,
           "defer_overlap_ms": 47,
           "defer_segment_count": 1,
-          "actionable_duration_ms": 254,
+          "actionable_duration_ms": 253,
           "alert_count": 1,
           "source_alert_ids": [
             "c1020"
@@ -136,8 +136,8 @@
           "max_severity": "p1",
           "idle_gap_ms": 400,
           "carry_in_ms": 400,
-          "carry_out_ms": 664,
-          "ledger_adjusted_actionable_ms": 354,
+          "carry_out_ms": 663,
+          "ledger_adjusted_actionable_ms": 353,
           "trust_reachable_envs": [
             "dns",
             "mesh",
@@ -175,9 +175,9 @@
           ],
           "max_severity": "p2",
           "idle_gap_ms": 593,
-          "carry_in_ms": 368,
-          "carry_out_ms": 615,
-          "ledger_adjusted_actionable_ms": 324,
+          "carry_in_ms": 367,
+          "carry_out_ms": 614,
+          "ledger_adjusted_actionable_ms": 323,
           "trust_reachable_envs": [
             "dns",
             "mesh",
@@ -208,16 +208,16 @@
           "dispatchable_duration_ms": 214,
           "defer_overlap_ms": 53,
           "defer_segment_count": 1,
-          "actionable_duration_ms": 201,
+          "actionable_duration_ms": 200,
           "alert_count": 1,
           "source_alert_ids": [
             "c1022"
           ],
           "max_severity": "p1",
           "idle_gap_ms": 615,
-          "carry_in_ms": 308,
-          "carry_out_ms": 534,
-          "ledger_adjusted_actionable_ms": 278,
+          "carry_in_ms": 307,
+          "carry_out_ms": 532,
+          "ledger_adjusted_actionable_ms": 276,
           "trust_reachable_envs": [
             "dns",
             "mesh",
@@ -255,8 +255,8 @@
           ],
           "max_severity": "p2",
           "idle_gap_ms": 630,
-          "carry_in_ms": 219,
-          "carry_out_ms": 394,
+          "carry_in_ms": 217,
+          "carry_out_ms": 392,
           "ledger_adjusted_actionable_ms": 229,
           "trust_reachable_envs": [
             "dns",
@@ -290,7 +290,7 @@
           "dispatchable_duration_ms": 302,
           "defer_overlap_ms": 53,
           "defer_segment_count": 1,
-          "actionable_duration_ms": 289,
+          "actionable_duration_ms": 288,
           "alert_count": 1,
           "source_alert_ids": [
             "d1007"
@@ -298,8 +298,8 @@
           "max_severity": "p1",
           "idle_gap_ms": 0,
           "carry_in_ms": 0,
-          "carry_out_ms": 314,
-          "ledger_adjusted_actionable_ms": 289,
+          "carry_out_ms": 313,
+          "ledger_adjusted_actionable_ms": 288,
           "trust_reachable_envs": [
             "dns",
             "edge",
@@ -569,7 +569,7 @@
           "dispatchable_duration_ms": 244,
           "defer_overlap_ms": 47,
           "defer_segment_count": 1,
-          "actionable_duration_ms": 233,
+          "actionable_duration_ms": 232,
           "alert_count": 1,
           "source_alert_ids": [
             "d1027"
@@ -577,8 +577,8 @@
           "max_severity": "p1",
           "idle_gap_ms": 1109,
           "carry_in_ms": 0,
-          "carry_out_ms": 243,
-          "ledger_adjusted_actionable_ms": 233,
+          "carry_out_ms": 242,
+          "ledger_adjusted_actionable_ms": 232,
           "trust_reachable_envs": [
             "mesh",
             "zone"
@@ -648,7 +648,7 @@
           "dispatchable_duration_ms": 394,
           "defer_overlap_ms": 47,
           "defer_segment_count": 1,
-          "actionable_duration_ms": 383,
+          "actionable_duration_ms": 382,
           "alert_count": 2,
           "source_alert_ids": [
             "e1012",
@@ -657,8 +657,8 @@
           "max_severity": "p1",
           "idle_gap_ms": 100,
           "carry_in_ms": 350,
-          "carry_out_ms": 743,
-          "ledger_adjusted_actionable_ms": 470,
+          "carry_out_ms": 742,
+          "ledger_adjusted_actionable_ms": 469,
           "trust_reachable_envs": [
             "dns",
             "mesh",
@@ -696,8 +696,8 @@
           ],
           "max_severity": "p1",
           "idle_gap_ms": 964,
-          "carry_in_ms": 261,
-          "carry_out_ms": 529,
+          "carry_in_ms": 260,
+          "carry_out_ms": 528,
           "ledger_adjusted_actionable_ms": 318,
           "trust_reachable_envs": [
             "dns",
@@ -729,16 +729,16 @@
           "dispatchable_duration_ms": 214,
           "defer_overlap_ms": 53,
           "defer_segment_count": 1,
-          "actionable_duration_ms": 201,
+          "actionable_duration_ms": 200,
           "alert_count": 1,
           "source_alert_ids": [
             "e1015"
           ],
           "max_severity": "p2",
           "idle_gap_ms": 894,
-          "carry_in_ms": 82,
-          "carry_out_ms": 308,
-          "ledger_adjusted_actionable_ms": 221,
+          "carry_in_ms": 81,
+          "carry_out_ms": 306,
+          "ledger_adjusted_actionable_ms": 220,
           "trust_reachable_envs": [
             "dns",
             "mesh",
@@ -931,7 +931,7 @@
           "dispatchable_duration_ms": 428,
           "defer_overlap_ms": 47,
           "defer_segment_count": 1,
-          "actionable_duration_ms": 417,
+          "actionable_duration_ms": 416,
           "alert_count": 2,
           "source_alert_ids": [
             "p1004",
@@ -940,8 +940,8 @@
           "max_severity": "p1",
           "idle_gap_ms": 911,
           "carry_in_ms": 0,
-          "carry_out_ms": 427,
-          "ledger_adjusted_actionable_ms": 417,
+          "carry_out_ms": 426,
+          "ledger_adjusted_actionable_ms": 416,
           "trust_reachable_envs": [
             "core",
             "dmz",
@@ -1206,7 +1206,7 @@
           "dispatchable_duration_ms": 266,
           "defer_overlap_ms": 53,
           "defer_segment_count": 1,
-          "actionable_duration_ms": 253,
+          "actionable_duration_ms": 252,
           "alert_count": 1,
           "source_alert_ids": [
             "z1029"
@@ -1214,8 +1214,8 @@
           "max_severity": "p1",
           "idle_gap_ms": 805,
           "carry_in_ms": 0,
-          "carry_out_ms": 278,
-          "ledger_adjusted_actionable_ms": 253,
+          "carry_out_ms": 277,
+          "ledger_adjusted_actionable_ms": 252,
           "trust_reachable_envs": [
             "mesh"
           ],
@@ -1472,11 +1472,11 @@
         "dispatchable_duration_ms": 394,
         "defer_overlap_ms": 47,
         "defer_segment_count": 1,
-        "actionable_duration_ms": 383,
+        "actionable_duration_ms": 382,
         "idle_gap_ms": 100,
         "carry_in_ms": 350,
-        "carry_out_ms": 743,
-        "ledger_adjusted_actionable_ms": 470,
+        "carry_out_ms": 742,
+        "ledger_adjusted_actionable_ms": 469,
         "trust_reachable_envs": [
           "dns",
           "mesh",
@@ -1503,8 +1503,8 @@
         "ledger_pressure_score": 12,
         "stability_index": 25,
         "priority": "critical",
-        "queue_hash": "f50b7b4bb34b",
-        "window_digest": "418e07a9e4"
+        "queue_hash": "cc6320d46a48",
+        "window_digest": "cccd6ae796"
       },
       {
         "ticket_id": "prod:2010517001000-2010517001455",
@@ -1625,11 +1625,11 @@
         "dispatchable_duration_ms": 428,
         "defer_overlap_ms": 47,
         "defer_segment_count": 1,
-        "actionable_duration_ms": 417,
+        "actionable_duration_ms": 416,
         "idle_gap_ms": 911,
         "carry_in_ms": 0,
-        "carry_out_ms": 427,
-        "ledger_adjusted_actionable_ms": 417,
+        "carry_out_ms": 426,
+        "ledger_adjusted_actionable_ms": 416,
         "trust_reachable_envs": [
           "core",
           "dmz",
@@ -1659,8 +1659,8 @@
         "ledger_pressure_score": 6,
         "stability_index": 28,
         "priority": "critical",
-        "queue_hash": "61640cf15874",
-        "window_digest": "1a0e521729"
+        "queue_hash": "f2fbf9229a8a",
+        "window_digest": "91d7f9713b"
       },
       {
         "ticket_id": "vault:2010517600500-2010517600900",
@@ -1726,11 +1726,11 @@
         "dispatchable_duration_ms": 265,
         "defer_overlap_ms": 47,
         "defer_segment_count": 1,
-        "actionable_duration_ms": 254,
+        "actionable_duration_ms": 253,
         "idle_gap_ms": 400,
         "carry_in_ms": 400,
-        "carry_out_ms": 664,
-        "ledger_adjusted_actionable_ms": 354,
+        "carry_out_ms": 663,
+        "ledger_adjusted_actionable_ms": 353,
         "trust_reachable_envs": [
           "dns",
           "mesh",
@@ -1756,8 +1756,8 @@
         "ledger_pressure_score": 11,
         "stability_index": 25,
         "priority": "critical",
-        "queue_hash": "279751387b02",
-        "window_digest": "7a1bb2b2a0"
+        "queue_hash": "3861068dc8ef",
+        "window_digest": "c258e57268"
       },
       {
         "ticket_id": "dmz:2010517203200-2010517203530",
@@ -1876,9 +1876,9 @@
         "defer_segment_count": 0,
         "actionable_duration_ms": 232,
         "idle_gap_ms": 593,
-        "carry_in_ms": 368,
-        "carry_out_ms": 615,
-        "ledger_adjusted_actionable_ms": 324,
+        "carry_in_ms": 367,
+        "carry_out_ms": 614,
+        "ledger_adjusted_actionable_ms": 323,
         "trust_reachable_envs": [
           "dns",
           "mesh",
@@ -1904,8 +1904,8 @@
         "ledger_pressure_score": 10,
         "stability_index": 25,
         "priority": "critical",
-        "queue_hash": "4f39ba97daff",
-        "window_digest": "2f642a9529"
+        "queue_hash": "389391428b61",
+        "window_digest": "71b0d4c74c"
       },
       {
         "ticket_id": "edge:2010517402400-2010517402706",
@@ -1926,8 +1926,8 @@
         "defer_segment_count": 0,
         "actionable_duration_ms": 253,
         "idle_gap_ms": 964,
-        "carry_in_ms": 261,
-        "carry_out_ms": 529,
+        "carry_in_ms": 260,
+        "carry_out_ms": 528,
         "ledger_adjusted_actionable_ms": 318,
         "trust_reachable_envs": [
           "dns",
@@ -1954,7 +1954,7 @@
         "ledger_pressure_score": 8,
         "stability_index": 23,
         "priority": "critical",
-        "queue_hash": "de08350a3a39",
+        "queue_hash": "7f8a38ef8012",
         "window_digest": "635cfd479a"
       },
       {
@@ -2021,11 +2021,11 @@
         "dispatchable_duration_ms": 302,
         "defer_overlap_ms": 53,
         "defer_segment_count": 1,
-        "actionable_duration_ms": 289,
+        "actionable_duration_ms": 288,
         "idle_gap_ms": 0,
         "carry_in_ms": 0,
-        "carry_out_ms": 314,
-        "ledger_adjusted_actionable_ms": 289,
+        "carry_out_ms": 313,
+        "ledger_adjusted_actionable_ms": 288,
         "trust_reachable_envs": [
           "dns",
           "edge",
@@ -2052,8 +2052,8 @@
         "ledger_pressure_score": 3,
         "stability_index": 24,
         "priority": "critical",
-        "queue_hash": "d86160c76675",
-        "window_digest": "6ea91a8562"
+        "queue_hash": "93534794e3a4",
+        "window_digest": "7167e4b929"
       },
       {
         "ticket_id": "core:2010517802800-2010517803070",
@@ -2072,11 +2072,11 @@
         "dispatchable_duration_ms": 214,
         "defer_overlap_ms": 53,
         "defer_segment_count": 1,
-        "actionable_duration_ms": 201,
+        "actionable_duration_ms": 200,
         "idle_gap_ms": 615,
-        "carry_in_ms": 308,
-        "carry_out_ms": 534,
-        "ledger_adjusted_actionable_ms": 278,
+        "carry_in_ms": 307,
+        "carry_out_ms": 532,
+        "ledger_adjusted_actionable_ms": 276,
         "trust_reachable_envs": [
           "dns",
           "mesh",
@@ -2102,8 +2102,8 @@
         "ledger_pressure_score": 8,
         "stability_index": 28,
         "priority": "critical",
-        "queue_hash": "9c923c1fdc76",
-        "window_digest": "360810e3a5"
+        "queue_hash": "5e662ba81790",
+        "window_digest": "dca1a1be4d"
       },
       {
         "ticket_id": "prod:2010517002200-2010517002489",
@@ -2175,11 +2175,11 @@
         "dispatchable_duration_ms": 266,
         "defer_overlap_ms": 53,
         "defer_segment_count": 1,
-        "actionable_duration_ms": 253,
+        "actionable_duration_ms": 252,
         "idle_gap_ms": 805,
         "carry_in_ms": 0,
-        "carry_out_ms": 278,
-        "ledger_adjusted_actionable_ms": 253,
+        "carry_out_ms": 277,
+        "ledger_adjusted_actionable_ms": 252,
         "trust_reachable_envs": [
           "mesh"
         ],
@@ -2200,8 +2200,8 @@
         "ledger_pressure_score": 3,
         "stability_index": 14,
         "priority": "critical",
-        "queue_hash": "3ab1a25ebd07",
-        "window_digest": "772a4611b3"
+        "queue_hash": "4758ff0b19de",
+        "window_digest": "c7cf32900f"
       },
       {
         "ticket_id": "prod:2010517005200-2010517005475",
@@ -2374,8 +2374,8 @@
         "defer_segment_count": 0,
         "actionable_duration_ms": 175,
         "idle_gap_ms": 630,
-        "carry_in_ms": 219,
-        "carry_out_ms": 394,
+        "carry_in_ms": 217,
+        "carry_out_ms": 392,
         "ledger_adjusted_actionable_ms": 229,
         "trust_reachable_envs": [
           "dns",
@@ -2402,7 +2402,7 @@
         "ledger_pressure_score": 5,
         "stability_index": 17,
         "priority": "high",
-        "queue_hash": "3085926c5e28",
+        "queue_hash": "174782855653",
         "window_digest": "4d61a9e955"
       },
       {
@@ -2512,11 +2512,11 @@
         "dispatchable_duration_ms": 244,
         "defer_overlap_ms": 47,
         "defer_segment_count": 1,
-        "actionable_duration_ms": 233,
+        "actionable_duration_ms": 232,
         "idle_gap_ms": 1109,
         "carry_in_ms": 0,
-        "carry_out_ms": 243,
-        "ledger_adjusted_actionable_ms": 233,
+        "carry_out_ms": 242,
+        "ledger_adjusted_actionable_ms": 232,
         "trust_reachable_envs": [
           "mesh",
           "zone"
@@ -2539,8 +2539,8 @@
         "ledger_pressure_score": 3,
         "stability_index": 11,
         "priority": "medium",
-        "queue_hash": "6449de68b15b",
-        "window_digest": "fe748a7673"
+        "queue_hash": "5910fb4015d3",
+        "window_digest": "0473b4cbb6"
       }
     ]
   },
@@ -2569,8 +2569,8 @@
       "total_dispatchable_duration_ms": 3552,
       "total_defer_overlap_ms": 53,
       "total_defer_segment_count": 1,
-      "total_actionable_duration_ms": 3539,
-      "total_ledger_adjusted_actionable_ms": 3542,
+      "total_actionable_duration_ms": 3538,
+      "total_ledger_adjusted_actionable_ms": 3541,
       "longest_window_ms": 500,
       "queued_window_count": 11,
       "muted_excluded_count": 1,
@@ -2582,14 +2582,14 @@
       "max_carry_out_ms": 500,
       "max_stability_index": 23,
       "canonical_alert_checksum": "062b7b72c969d3858217492a2735a8be01945ba8cfbe523eef430186864c86d4",
-      "queue_hash_checksum": "72dd45538d1499058c584ac8896735f2fdf2c0326680ff9e5e0c8f796fa9a106",
+      "queue_hash_checksum": "1edf89b5f4e983028157e7c4dfe88b2d99e6ccd9e694e186d3ae4d49ee52d247",
       "freeze_compaction_checksum": "63f672e228d497414e811672f77c7e7bec555c6178a6b866b8a393d7c64a3f00",
       "reopen_compaction_checksum": "07ccc158894c91900435104e2ed6979d41b3d19aca0623192e2bce049f206834",
       "rotation_compaction_checksum": "2b54a1c8ae0e573585b21ca2aafbd851f16760c14ad9ed996f6ce3fb63b87c08",
       "defer_compaction_checksum": "198df340199d465fde07d56c8e66b081985535d359a37943ca0c05cd738cd3b2",
       "trust_edge_checksum": "9e21caca5a5a1ec1e5e26420bd0acd2cfc3037fc6738d97f5e6ac48042826f19",
-      "window_digest_checksum": "61fab810484e5238442034903e8da5d8f719aa74e5bc28733879d0921fe5c5e1",
-      "ledger_checksum": "3e6034be4c62d1262afa54a5a8f0475124955c70b00d2686b8422781864ea0ee",
+      "window_digest_checksum": "b67a30567890d511444ddca2ba23f488e7dd2c5d82629a364e4c200765d18789",
+      "ledger_checksum": "6155c259ea2c84546bf43e131bd6a453f5ed03e70ee963daf862245e4b9193a9",
       "trust_path_digest_checksum": "a9485335758db695a331463acd6fb222fb0b63e601a88d02cbd5cb6d56f19f43"
     },
     "windows": {
@@ -2731,7 +2731,7 @@
           "dispatchable_duration_ms": 381,
           "defer_overlap_ms": 53,
           "defer_segment_count": 1,
-          "actionable_duration_ms": 368,
+          "actionable_duration_ms": 367,
           "alert_count": 2,
           "source_alert_ids": [
             "d5004",
@@ -2740,8 +2740,8 @@
           "max_severity": "p1",
           "idle_gap_ms": 0,
           "carry_in_ms": 0,
-          "carry_out_ms": 393,
-          "ledger_adjusted_actionable_ms": 368,
+          "carry_out_ms": 392,
+          "ledger_adjusted_actionable_ms": 367,
           "trust_reachable_envs": [
             "dns",
             "edge",
@@ -3110,11 +3110,11 @@
         "dispatchable_duration_ms": 381,
         "defer_overlap_ms": 53,
         "defer_segment_count": 1,
-        "actionable_duration_ms": 368,
+        "actionable_duration_ms": 367,
         "idle_gap_ms": 0,
         "carry_in_ms": 0,
-        "carry_out_ms": 393,
-        "ledger_adjusted_actionable_ms": 368,
+        "carry_out_ms": 392,
+        "ledger_adjusted_actionable_ms": 367,
         "trust_reachable_envs": [
           "dns",
           "edge",
@@ -3142,8 +3142,8 @@
         "ledger_pressure_score": 5,
         "stability_index": 23,
         "priority": "critical",
-        "queue_hash": "80ed142ccc98",
-        "window_digest": "cca0a01f29"
+        "queue_hash": "4287d617bdf8",
+        "window_digest": "80d747251c"
       },
       {
         "ticket_id": "prod:2010517001000-2010517001350",
