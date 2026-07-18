@@ -2,7 +2,7 @@
   {
     "alert_id": "p1001",
     "start_ms": 2010517001000,
-    "end_ms": 2010517001620,
+    "end_ms": 2010517001322,
     "severity": "p1",
     "env": "prod",
     "signature": "dnssec rrsig expiry",
@@ -10,8 +10,8 @@
   },
   {
     "alert_id": "p1002",
-    "start_ms": 2010517001650,
-    "end_ms": 2010517001850,
+    "start_ms": 2010517001352,
+    "end_ms": 2010517001455,
     "severity": "p2",
     "env": "PROD",
     "signature": "glue record stale",
@@ -20,7 +20,7 @@
   {
     "alert_id": "p1003",
     "start_ms": 2010517002200,
-    "end_ms": 2010517002760,
+    "end_ms": 2010517002489,
     "severity": "p2",
     "env": "Prod ",
     "signature": "zone transfer axfr gap",
@@ -29,7 +29,7 @@
   {
     "alert_id": "p1004",
     "start_ms": 2010517003400,
-    "end_ms": 2010517004100,
+    "end_ms": 2010517003761,
     "severity": "p1",
     "env": "prod",
     "signature": "cname loop detected",
@@ -37,8 +37,8 @@
   },
   {
     "alert_id": "p1005",
-    "start_ms": 2010517004130,
-    "end_ms": 2010517004290,
+    "start_ms": 2010517003791,
+    "end_ms": 2010517003870,
     "severity": "p3",
     "env": "PROD",
     "signature": "ptr reverse drift",
@@ -47,7 +47,7 @@
   {
     "alert_id": "p1006",
     "start_ms": 2010517005200,
-    "end_ms": 2010517005740,
+    "end_ms": 2010517005475,
     "severity": "p1",
     "env": "Prod ",
     "signature": "ttl rollback",
@@ -56,7 +56,7 @@
   {
     "alert_id": "d1007",
     "start_ms": 2010517201000,
-    "end_ms": 2010517201700,
+    "end_ms": 2010517201358,
     "severity": "p1",
     "env": "dmz",
     "signature": "ds record orphan",
@@ -65,7 +65,7 @@
   {
     "alert_id": "d1008",
     "start_ms": 2010517202000,
-    "end_ms": 2010517202520,
+    "end_ms": 2010517202270,
     "severity": "p2",
     "env": "DMZ",
     "signature": "soa serial mismatch",
@@ -73,8 +73,8 @@
   },
   {
     "alert_id": "d1009",
-    "start_ms": 2010517202550,
-    "end_ms": 2010517202730,
+    "start_ms": 2010517202300,
+    "end_ms": 2010517202392,
     "severity": "p2",
     "env": "Dmz ",
     "signature": "ns delegation drift",
@@ -83,7 +83,7 @@
   {
     "alert_id": "d1010",
     "start_ms": 2010517203200,
-    "end_ms": 2010517203840,
+    "end_ms": 2010517203530,
     "severity": "p1",
     "env": "dmz",
     "signature": "dnssec rrsig expiry",
@@ -92,7 +92,7 @@
   {
     "alert_id": "d1011",
     "start_ms": 2010517204200,
-    "end_ms": 2010517204680,
+    "end_ms": 2010517204446,
     "severity": "p2",
     "env": "DMZ",
     "signature": "glue record stale",
@@ -101,7 +101,7 @@
   {
     "alert_id": "e1012",
     "start_ms": 2010517401000,
-    "end_ms": 2010517401560,
+    "end_ms": 2010517401287,
     "severity": "p2",
     "env": "edge",
     "signature": "zone transfer axfr gap",
@@ -109,8 +109,8 @@
   },
   {
     "alert_id": "e1013",
-    "start_ms": 2010517401590,
-    "end_ms": 2010517401830,
+    "start_ms": 2010517401317,
+    "end_ms": 2010517401436,
     "severity": "p1",
     "env": "EDGE ",
     "signature": "cname loop detected",
@@ -119,7 +119,7 @@
   {
     "alert_id": "e1014",
     "start_ms": 2010517402400,
-    "end_ms": 2010517403000,
+    "end_ms": 2010517402706,
     "severity": "p1",
     "env": "edge",
     "signature": "ptr reverse drift",
@@ -128,7 +128,7 @@
   {
     "alert_id": "e1015",
     "start_ms": 2010517403600,
-    "end_ms": 2010517404120,
+    "end_ms": 2010517403870,
     "severity": "p2",
     "env": "EDGE ",
     "signature": "ttl rollback",
@@ -137,7 +137,7 @@
   {
     "alert_id": "v1016",
     "start_ms": 2010517601000,
-    "end_ms": 2010517601760,
+    "end_ms": 2010517601394,
     "severity": "p1",
     "env": "vault",
     "signature": "ds record orphan",
@@ -145,8 +145,8 @@
   },
   {
     "alert_id": "v1017",
-    "start_ms": 2010517601790,
-    "end_ms": 2010517602010,
+    "start_ms": 2010517601424,
+    "end_ms": 2010517601536,
     "severity": "p2",
     "env": "Vault ",
     "signature": "soa serial mismatch",
@@ -155,7 +155,7 @@
   {
     "alert_id": "v1018",
     "start_ms": 2010517602600,
-    "end_ms": 2010517603140,
+    "end_ms": 2010517602877,
     "severity": "p2",
     "env": "vault",
     "signature": "ns delegation drift",
@@ -164,7 +164,7 @@
   {
     "alert_id": "v1019",
     "start_ms": 2010517603800,
-    "end_ms": 2010517604420,
+    "end_ms": 2010517604118,
     "severity": "p1",
     "env": "Vault ",
     "signature": "dnssec rrsig expiry",
@@ -173,7 +173,7 @@
   {
     "alert_id": "c1020",
     "start_ms": 2010517801000,
-    "end_ms": 2010517801600,
+    "end_ms": 2010517801307,
     "severity": "p1",
     "env": "core",
     "signature": "glue record stale",
@@ -182,7 +182,7 @@
   {
     "alert_id": "c1021",
     "start_ms": 2010517801900,
-    "end_ms": 2010517802460,
+    "end_ms": 2010517802185,
     "severity": "p2",
     "env": "CORE ",
     "signature": "zone transfer axfr gap",
@@ -191,7 +191,7 @@
   {
     "alert_id": "c1022",
     "start_ms": 2010517802800,
-    "end_ms": 2010517803320,
+    "end_ms": 2010517803070,
     "severity": "p1",
     "env": "core",
     "signature": "cname loop detected",
@@ -200,7 +200,7 @@
   {
     "alert_id": "c1023",
     "start_ms": 2010517803700,
-    "end_ms": 2010517804180,
+    "end_ms": 2010517803948,
     "severity": "p2",
     "env": "CORE ",
     "signature": "ptr reverse drift",
@@ -209,7 +209,7 @@
   {
     "alert_id": "d1024",
     "start_ms": 2010518001000,
-    "end_ms": 2010518001640,
+    "end_ms": 2010518001330,
     "severity": "p1",
     "env": "dns",
     "signature": "ttl rollback",
@@ -218,7 +218,7 @@
   {
     "alert_id": "d1025",
     "start_ms": 2010518002300,
-    "end_ms": 2010518003000,
+    "end_ms": 2010518002661,
     "severity": "p2",
     "env": "DNS ",
     "signature": "ds record orphan",
@@ -226,8 +226,8 @@
   },
   {
     "alert_id": "d1026",
-    "start_ms": 2010518003030,
-    "end_ms": 2010518003230,
+    "start_ms": 2010518002691,
+    "end_ms": 2010518002791,
     "severity": "p1",
     "env": "dns",
     "signature": "soa serial mismatch",
@@ -236,7 +236,7 @@
   {
     "alert_id": "d1027",
     "start_ms": 2010518003900,
-    "end_ms": 2010518004460,
+    "end_ms": 2010518004186,
     "severity": "p1",
     "env": "DNS ",
     "signature": "ns delegation drift",
@@ -245,7 +245,7 @@
   {
     "alert_id": "z1028",
     "start_ms": 2010518201000,
-    "end_ms": 2010518201580,
+    "end_ms": 2010518201295,
     "severity": "p2",
     "env": "zone",
     "signature": "dnssec rrsig expiry",
@@ -254,7 +254,7 @@
   {
     "alert_id": "z1029",
     "start_ms": 2010518202100,
-    "end_ms": 2010518202720,
+    "end_ms": 2010518202422,
     "severity": "p1",
     "env": "ZONE ",
     "signature": "glue record stale",
@@ -263,7 +263,7 @@
   {
     "alert_id": "z1030",
     "start_ms": 2010518203300,
-    "end_ms": 2010518203800,
+    "end_ms": 2010518203559,
     "severity": "p2",
     "env": "zone",
     "signature": "zone transfer axfr gap",
@@ -272,7 +272,7 @@
   {
     "alert_id": "m1031",
     "start_ms": 2010518401000,
-    "end_ms": 2010518401700,
+    "end_ms": 2010518401362,
     "severity": "p1",
     "env": "mesh",
     "signature": "cname loop detected",
@@ -280,8 +280,8 @@
   },
   {
     "alert_id": "m1032",
-    "start_ms": 2010518401730,
-    "end_ms": 2010518401990,
+    "start_ms": 2010518401392,
+    "end_ms": 2010518401524,
     "severity": "p2",
     "env": "MESH ",
     "signature": "ptr reverse drift",
@@ -290,7 +290,7 @@
   {
     "alert_id": "m1033",
     "start_ms": 2010518402400,
-    "end_ms": 2010518402940,
+    "end_ms": 2010518402676,
     "severity": "p2",
     "env": "mesh",
     "signature": "ttl rollback",

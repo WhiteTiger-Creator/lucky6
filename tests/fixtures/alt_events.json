@@ -2,7 +2,7 @@
   {
     "alert_id": "p5001",
     "start_ms": 2010517001000,
-    "end_ms": 2010517001680,
+    "end_ms": 2010517001350,
     "severity": "p1",
     "env": "prod",
     "signature": "ptr reverse drift",
@@ -11,7 +11,7 @@
   {
     "alert_id": "p5002",
     "start_ms": 2010517002100,
-    "end_ms": 2010517002640,
+    "end_ms": 2010517002376,
     "severity": "p2",
     "env": "PROD",
     "signature": "ttl rollback",
@@ -20,7 +20,7 @@
   {
     "alert_id": "p5003",
     "start_ms": 2010517003300,
-    "end_ms": 2010517003900,
+    "end_ms": 2010517003607,
     "severity": "p1",
     "env": "prod",
     "signature": "ds record orphan",
@@ -29,7 +29,7 @@
   {
     "alert_id": "d5004",
     "start_ms": 2010517201000,
-    "end_ms": 2010517201560,
+    "end_ms": 2010517201285,
     "severity": "p2",
     "env": "dmz",
     "signature": "soa serial mismatch",
@@ -37,8 +37,8 @@
   },
   {
     "alert_id": "d5005",
-    "start_ms": 2010517201590,
-    "end_ms": 2010517201830,
+    "start_ms": 2010517201315,
+    "end_ms": 2010517201439,
     "severity": "p1",
     "env": "Dmz ",
     "signature": "ns delegation drift",
@@ -47,7 +47,7 @@
   {
     "alert_id": "d5006",
     "start_ms": 2010517202400,
-    "end_ms": 2010517203040,
+    "end_ms": 2010517202731,
     "severity": "p1",
     "env": "dmz",
     "signature": "dnssec rrsig expiry",
@@ -56,7 +56,7 @@
   {
     "alert_id": "c5007",
     "start_ms": 2010517401000,
-    "end_ms": 2010517401600,
+    "end_ms": 2010517401310,
     "severity": "p1",
     "env": "core",
     "signature": "glue record stale",
@@ -65,7 +65,7 @@
   {
     "alert_id": "c5008",
     "start_ms": 2010517401900,
-    "end_ms": 2010517402420,
+    "end_ms": 2010517402167,
     "severity": "p2",
     "env": "CORE ",
     "signature": "zone transfer axfr gap",
@@ -74,7 +74,7 @@
   {
     "alert_id": "c5009",
     "start_ms": 2010517402800,
-    "end_ms": 2010517403360,
+    "end_ms": 2010517403087,
     "severity": "p1",
     "env": "core",
     "signature": "cname loop detected",
@@ -83,7 +83,7 @@
   {
     "alert_id": "v5010",
     "start_ms": 2010517601000,
-    "end_ms": 2010517601720,
+    "end_ms": 2010517601369,
     "severity": "p1",
     "env": "vault",
     "signature": "ptr reverse drift",
@@ -92,7 +92,7 @@
   {
     "alert_id": "v5011",
     "start_ms": 2010517602600,
-    "end_ms": 2010517603100,
+    "end_ms": 2010517602854,
     "severity": "p2",
     "env": "vault",
     "signature": "ttl rollback",
