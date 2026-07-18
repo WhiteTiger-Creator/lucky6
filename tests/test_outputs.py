@@ -780,7 +780,7 @@ def test_defer_compaction_and_scope_are_used(tmp_path: Path):
         assert first["defer_overlap_ms"] == 210
         assert first["defer_segment_count"] == 2
         assert first["actionable_duration_ms"] == max(
-            first["dispatchable_duration_ms"] - (210 // 4), 0
+            first["dispatchable_duration_ms"] - (-(-210 // 4)), 0
         )
         assert second["defer_overlap_ms"] == 0
         assert summary["total_defer_overlap_ms"] == 210
