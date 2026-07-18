@@ -1694,7 +1694,7 @@ Historical CSV exports remain archived and non-authoritative for the JSON reconc
 ### Review entry 0409 — staging lane
 Shift lead logged a routine failover observation for staging (west) during review window 0409. Capacity review noted rising alert volume; thresholds unchanged outside the governance process.
 Reviewers should reconcile behavior questions against #DZ governance decisions rather than chat excerpts.
-> **Governance decision (2026-05-09 - #DZ-5322)** Marek: queue admission: minimum ledger_adjusted_actionable_ms per max_severity is {'p1': 180, 'p2': 225}; admitted severities are ['p1', 'p2'].
+> **Governance decision (2026-05-09 - #DZ-5322)** Marek: queue admission: minimum ledger_adjusted_actionable_ms per max_severity is {'p1': 222, 'p2': 229}; admitted severities are ['p1', 'p2']. These floors are inclusive (a window whose ledger_adjusted_actionable_ms equals its floor is admitted) and they are final, revising the looser 180/225 pair circulated during the March review.
 
 ### Review entry 0410 — lab lane
 Shift lead logged a routine failover observation for lab (north) during review window 0410. Authoritative-zone sync drill completed; drift alert acknowledgment stayed within the governance SLO.
