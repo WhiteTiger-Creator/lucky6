@@ -1,62 +1,74 @@
 [
   {
+    "env": "prod",
+    "severity_scope": "all",
+    "start_ms": 2010517004130,
+    "end_ms": 2010517004295
+  },
+  {
     "env": "dmz",
     "severity_scope": "all",
-    "start_ms": 2010517006100,
-    "end_ms": 2010517006600
+    "start_ms": 2010517201580,
+    "end_ms": 2010517201705
   },
   {
     "env": "dmz",
     "severity_scope": "all",
-    "start_ms": 2010517006500,
-    "end_ms": 2010517006750
-  },
-  {
-    "env": "dmz",
-    "severity_scope": "p1",
-    "start_ms": 2010517009000,
-    "end_ms": 2010517009400
-  },
-  {
-    "env": "dmz",
-    "severity_scope": "p1",
-    "start_ms": 2010517009700,
-    "end_ms": 2010517009780
-  },
-  {
-    "env": "prod",
-    "severity_scope": "p2",
-    "start_ms": 2010517004600,
-    "end_ms": 2010517004750
-  },
-  {
-    "env": "prod",
-    "severity_scope": "p2",
-    "start_ms": 2010517004750,
-    "end_ms": 2010517004800
+    "start_ms": 2010517202640,
+    "end_ms": 2010517202735
   },
   {
     "env": "edge",
     "severity_scope": "all",
-    "start_ms": 2010517001180,
-    "end_ms": 2010517001280
+    "start_ms": 2010517401670,
+    "end_ms": 2010517401835
   },
   {
     "env": "edge",
-    "severity_scope": "p2",
-    "start_ms": 2010517002000,
-    "end_ms": 2010517002150
-  },
-  {
-    "env": "edge",
-    "severity_scope": "debug",
-    "start_ms": 517000000,
-    "end_ms": 517000001
-  },
-  {
-    "env": "prod",
     "severity_scope": "all",
-    "start_ms": "oops",
-    "end_ms": "oops2"
+    "start_ms": 2010517404000,
+    "end_ms": 2010517404125
+  },
+  {
+    "env": "vault",
+    "severity_scope": "all",
+    "start_ms": 2010517601920,
+    "end_ms": 2010517602015
+  },
+  {
+    "env": "core",
+    "severity_scope": "all",
+    "start_ms": 2010517801440,
+    "end_ms": 2010517801605
+  },
+  {
+    "env": "core",
+    "severity_scope": "all",
+    "start_ms": 2010517803200,
+    "end_ms": 2010517803325
+  },
+  {
+    "env": "core",
+    "severity_scope": "all",
+    "start_ms": 2010517804090,
+    "end_ms": 2010517804185
+  },
+  {
+    "env": "dns",
+    "severity_scope": "all",
+    "start_ms": 2010518004300,
+    "end_ms": 2010518004465
+  },
+  {
+    "env": "zone",
+    "severity_scope": "all",
+    "start_ms": 2010518202600,
+    "end_ms": 2010518202725
+  },
+  {
+    "env": "zone",
+    "severity_scope": "all",
+    "start_ms": 2010518203710,
+    "end_ms": 2010518203805
   }
 ]

@@ -1,200 +1,371 @@
 [
   {
-    "alert_id": "z01",
+    "alert_id": "p1001",
     "start_ms": 2010517001000,
-    "end_ms": 2010517001300,
+    "end_ms": 2010517001620,
     "severity": "p1",
-    "env": "prod",
-    "signature": "soa serial mismatch",
-    "muted": false
-  },
-  {
-    "alert_id": "z02",
-    "start_ms": 2010517001200,
-    "end_ms": 2010517001800,
-    "severity": "p3",
-    "env": "edge",
-    "signature": "ns delegation drift",
-    "muted": false
-  },
-  {
-    "alert_id": "z02",
-    "start_ms": 2010517001200,
-    "end_ms": 2010517002200,
-    "severity": "P2",
-    "env": "edge",
-    "signature": " ns delegation drift replay ",
-    "muted": false
-  },
-  {
-    "alert_id": "z03",
-    "start_ms": 2010517002400,
-    "end_ms": 2010517002600,
-    "severity": "p4",
-    "env": "prod",
-    "signature": "glue record recovered",
-    "muted": false
-  },
-  {
-    "alert_id": "z04",
-    "start_ms": 2010517003000,
-    "end_ms": 2010517003300,
-    "severity": "p3",
-    "env": "edge",
-    "signature": "resolver late refresh",
-    "muted": false
-  },
-  {
-    "alert_id": "z05",
-    "start_ms": 2010517003400,
-    "end_ms": 2010517003900,
-    "severity": "p3",
-    "env": "dmz",
-    "signature": "manual analyst note",
-    "muted": false
-  },
-  {
-    "alert_id": "z06",
-    "start_ms": 2010517004500,
-    "end_ms": 2010517004900,
-    "severity": "p2",
     "env": "prod",
     "signature": "dnssec rrsig expiry",
     "muted": false
   },
   {
-    "alert_id": "z07",
-    "start_ms": 2010517005000,
-    "end_ms": 2010517005600,
-    "severity": "P1",
-    "env": "dmz",
-    "signature": "authoritative rollback",
-    "muted": false
-  },
-  {
-    "alert_id": "z08",
-    "start_ms": 2010517005400,
-    "end_ms": 2010517005800,
-    "severity": "P2",
-    "env": "edge",
-    "signature": "temporary zone drift burst",
-    "muted": false
-  },
-  {
-    "alert_id": "z08",
-    "start_ms": 2010517005400,
-    "end_ms": 2010517005600,
-    "severity": "p3",
-    "env": "edge",
-    "signature": "recovered after axfr",
-    "muted": false
-  },
-  {
-    "alert_id": "z09",
-    "start_ms": 2010517006200,
-    "end_ms": 2010517006800,
+    "alert_id": "p1002",
+    "start_ms": 2010517001650,
+    "end_ms": 2010517001850,
     "severity": "p2",
+    "env": "PROD",
+    "signature": "glue record stale",
+    "muted": false
+  },
+  {
+    "alert_id": "p1003",
+    "start_ms": 2010517002200,
+    "end_ms": 2010517002760,
+    "severity": "p2",
+    "env": "Prod ",
+    "signature": "zone transfer axfr gap",
+    "muted": false
+  },
+  {
+    "alert_id": "p1004",
+    "start_ms": 2010517003400,
+    "end_ms": 2010517004100,
+    "severity": "p1",
+    "env": "prod",
+    "signature": "cname loop detected",
+    "muted": false
+  },
+  {
+    "alert_id": "p1005",
+    "start_ms": 2010517004130,
+    "end_ms": 2010517004290,
+    "severity": "p3",
+    "env": "PROD",
+    "signature": "ptr reverse drift",
+    "muted": false
+  },
+  {
+    "alert_id": "p1006",
+    "start_ms": 2010517005200,
+    "end_ms": 2010517005740,
+    "severity": "p1",
+    "env": "Prod ",
+    "signature": "ttl rollback",
+    "muted": false
+  },
+  {
+    "alert_id": "d1007",
+    "start_ms": 2010517201000,
+    "end_ms": 2010517201700,
+    "severity": "p1",
     "env": "dmz",
-    "signature": "duplicate notify replay",
+    "signature": "ds record orphan",
     "muted": false
   },
   {
-    "alert_id": "z10",
-    "start_ms": 2010517006800,
-    "end_ms": 2010517006900,
+    "alert_id": "d1008",
+    "start_ms": 2010517202000,
+    "end_ms": 2010517202520,
+    "severity": "p2",
+    "env": "DMZ",
+    "signature": "soa serial mismatch",
+    "muted": false
+  },
+  {
+    "alert_id": "d1009",
+    "start_ms": 2010517202550,
+    "end_ms": 2010517202730,
+    "severity": "p2",
+    "env": "Dmz ",
+    "signature": "ns delegation drift",
+    "muted": false
+  },
+  {
+    "alert_id": "d1010",
+    "start_ms": 2010517203200,
+    "end_ms": 2010517203840,
     "severity": "p1",
-    "env": "prod",
-    "signature": "stale delegation map",
+    "env": "dmz",
+    "signature": "dnssec rrsig expiry",
     "muted": false
   },
   {
-    "alert_id": "z10",
-    "start_ms": 2010517006800,
-    "end_ms": 2010517007000,
+    "alert_id": "d1011",
+    "start_ms": 2010517204200,
+    "end_ms": 2010517204680,
+    "severity": "p2",
+    "env": "DMZ",
+    "signature": "glue record stale",
+    "muted": false
+  },
+  {
+    "alert_id": "e1012",
+    "start_ms": 2010517401000,
+    "end_ms": 2010517401560,
+    "severity": "p2",
+    "env": "edge",
+    "signature": "zone transfer axfr gap",
+    "muted": false
+  },
+  {
+    "alert_id": "e1013",
+    "start_ms": 2010517401590,
+    "end_ms": 2010517401830,
     "severity": "p1",
-    "env": "prod",
-    "signature": "stale delegation map replay",
+    "env": "EDGE ",
+    "signature": "cname loop detected",
     "muted": false
   },
   {
-    "alert_id": "z11",
-    "start_ms": 2010517007300,
-    "end_ms": 2010517007350,
-    "severity": "p4",
-    "env": "prod",
-    "signature": "diagnostic trace",
-    "muted": false
-  },
-  {
-    "alert_id": "z12",
-    "start_ms": 2010517007800,
-    "end_ms": 2010517008400,
+    "alert_id": "e1014",
+    "start_ms": 2010517402400,
+    "end_ms": 2010517403000,
     "severity": "p1",
     "env": "edge",
-    "signature": "waived rehearsal alert",
+    "signature": "ptr reverse drift",
+    "muted": false
+  },
+  {
+    "alert_id": "e1015",
+    "start_ms": 2010517403600,
+    "end_ms": 2010517404120,
+    "severity": "p2",
+    "env": "EDGE ",
+    "signature": "ttl rollback",
+    "muted": false
+  },
+  {
+    "alert_id": "v1016",
+    "start_ms": 2010517601000,
+    "end_ms": 2010517601760,
+    "severity": "p1",
+    "env": "vault",
+    "signature": "ds record orphan",
+    "muted": false
+  },
+  {
+    "alert_id": "v1017",
+    "start_ms": 2010517601790,
+    "end_ms": 2010517602010,
+    "severity": "p2",
+    "env": "Vault ",
+    "signature": "soa serial mismatch",
+    "muted": false
+  },
+  {
+    "alert_id": "v1018",
+    "start_ms": 2010517602600,
+    "end_ms": 2010517603140,
+    "severity": "p2",
+    "env": "vault",
+    "signature": "ns delegation drift",
+    "muted": false
+  },
+  {
+    "alert_id": "v1019",
+    "start_ms": 2010517603800,
+    "end_ms": 2010517604420,
+    "severity": "p1",
+    "env": "Vault ",
+    "signature": "dnssec rrsig expiry",
+    "muted": false
+  },
+  {
+    "alert_id": "c1020",
+    "start_ms": 2010517801000,
+    "end_ms": 2010517801600,
+    "severity": "p1",
+    "env": "core",
+    "signature": "glue record stale",
+    "muted": false
+  },
+  {
+    "alert_id": "c1021",
+    "start_ms": 2010517801900,
+    "end_ms": 2010517802460,
+    "severity": "p2",
+    "env": "CORE ",
+    "signature": "zone transfer axfr gap",
+    "muted": false
+  },
+  {
+    "alert_id": "c1022",
+    "start_ms": 2010517802800,
+    "end_ms": 2010517803320,
+    "severity": "p1",
+    "env": "core",
+    "signature": "cname loop detected",
+    "muted": false
+  },
+  {
+    "alert_id": "c1023",
+    "start_ms": 2010517803700,
+    "end_ms": 2010517804180,
+    "severity": "p2",
+    "env": "CORE ",
+    "signature": "ptr reverse drift",
+    "muted": false
+  },
+  {
+    "alert_id": "d1024",
+    "start_ms": 2010518001000,
+    "end_ms": 2010518001640,
+    "severity": "p1",
+    "env": "dns",
+    "signature": "ttl rollback",
+    "muted": false
+  },
+  {
+    "alert_id": "d1025",
+    "start_ms": 2010518002300,
+    "end_ms": 2010518003000,
+    "severity": "p2",
+    "env": "DNS ",
+    "signature": "ds record orphan",
+    "muted": false
+  },
+  {
+    "alert_id": "d1026",
+    "start_ms": 2010518003030,
+    "end_ms": 2010518003230,
+    "severity": "p1",
+    "env": "dns",
+    "signature": "soa serial mismatch",
+    "muted": false
+  },
+  {
+    "alert_id": "d1027",
+    "start_ms": 2010518003900,
+    "end_ms": 2010518004460,
+    "severity": "p1",
+    "env": "DNS ",
+    "signature": "ns delegation drift",
+    "muted": false
+  },
+  {
+    "alert_id": "z1028",
+    "start_ms": 2010518201000,
+    "end_ms": 2010518201580,
+    "severity": "p2",
+    "env": "zone",
+    "signature": "dnssec rrsig expiry",
+    "muted": false
+  },
+  {
+    "alert_id": "z1029",
+    "start_ms": 2010518202100,
+    "end_ms": 2010518202720,
+    "severity": "p1",
+    "env": "ZONE ",
+    "signature": "glue record stale",
+    "muted": false
+  },
+  {
+    "alert_id": "z1030",
+    "start_ms": 2010518203300,
+    "end_ms": 2010518203800,
+    "severity": "p2",
+    "env": "zone",
+    "signature": "zone transfer axfr gap",
+    "muted": false
+  },
+  {
+    "alert_id": "m1031",
+    "start_ms": 2010518401000,
+    "end_ms": 2010518401700,
+    "severity": "p1",
+    "env": "mesh",
+    "signature": "cname loop detected",
+    "muted": false
+  },
+  {
+    "alert_id": "m1032",
+    "start_ms": 2010518401730,
+    "end_ms": 2010518401990,
+    "severity": "p2",
+    "env": "MESH ",
+    "signature": "ptr reverse drift",
+    "muted": false
+  },
+  {
+    "alert_id": "m1033",
+    "start_ms": 2010518402400,
+    "end_ms": 2010518402940,
+    "severity": "p2",
+    "env": "mesh",
+    "signature": "ttl rollback",
+    "muted": false
+  },
+  {
+    "alert_id": "m1",
+    "start_ms": 2010517001500,
+    "end_ms": 2010517001800,
+    "severity": "p1",
+    "env": "prod",
+    "signature": "muted noise",
     "muted": true
   },
   {
-    "alert_id": "z13",
-    "start_ms": 2010517008600,
-    "end_ms": 2010517009200,
+    "alert_id": "m2",
+    "start_ms": 2010517200500,
+    "end_ms": 2010517200800,
     "severity": "p2",
     "env": "dmz",
-    "signature": "cname loop ratio",
-    "muted": false
-  },
-  {
-    "alert_id": "z14",
-    "start_ms": 2010517008800,
-    "end_ms": 2010517009000,
-    "severity": "p3",
-    "env": "edge",
-    "signature": "batch axfr complete",
-    "muted": false
-  },
-  {
-    "alert_id": "z15",
-    "start_ms": 2010517009000,
-    "end_ms": 2010517009800,
-    "severity": "p1",
-    "env": "dmz",
-    "signature": "terminal zone rollback",
-    "muted": false
-  },
-  {
-    "alert_id": "z16",
-    "start_ms": 2010517009100,
-    "end_ms": 2010517009500,
-    "severity": "p2",
-    "env": "dmz",
-    "signature": "zzz candidate",
+    "signature": "muted noise",
     "muted": "yes"
   },
   {
-    "alert_id": "z16",
-    "start_ms": 2010517009100,
-    "end_ms": 2010517009500,
-    "severity": "p2",
-    "env": "dmz",
-    "signature": "aaa candidate",
+    "alert_id": "u1",
+    "start_ms": 2010517400500,
+    "end_ms": 2010517400900,
+    "severity": "sev9",
+    "env": "edge",
+    "signature": "unknown sev",
     "muted": false
   },
   {
-    "alert_id": "z17",
-    "start_ms": 2010517009200,
-    "end_ms": 2010517009300,
-    "severity": "p2",
-    "env": "prod",
-    "signature": "alpha signature",
+    "alert_id": "u2",
+    "start_ms": 2010517600500,
+    "end_ms": 2010517600900,
+    "severity": "P1",
+    "env": "vault",
+    "signature": "casing sev",
     "muted": false
   },
   {
-    "alert_id": "z17",
-    "start_ms": 2010517009200,
-    "end_ms": 2010517009300,
+    "alert_id": "D1",
+    "start_ms": 2010517800000,
+    "end_ms": 2010517800400,
     "severity": "p2",
-    "env": "prod",
-    "signature": "zeta signature",
+    "env": "core",
+    "signature": "dup a",
+    "muted": false
+  },
+  {
+    "alert_id": "D1",
+    "start_ms": 2010517800000,
+    "end_ms": 2010517800600,
+    "severity": "p2",
+    "env": "core",
+    "signature": "dup b",
+    "muted": false
+  },
+  {
+    "alert_id": "D2",
+    "start_ms": 2010517810000,
+    "end_ms": 2010517810500,
+    "severity": "p2",
+    "env": "dns",
+    "signature": "dup c",
+    "muted": false
+  },
+  {
+    "alert_id": "D2",
+    "start_ms": 2010517810000,
+    "end_ms": 2010517810500,
+    "severity": "p1",
+    "env": "dns",
+    "signature": "dup d",
     "muted": false
   }
 ]
