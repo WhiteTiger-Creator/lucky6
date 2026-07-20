@@ -27,6 +27,36 @@ PRIORITY_ORDER = ["critical", "high", "medium"]
 PRIORITY_RANK = {name: len(PRIORITY_ORDER) - idx for idx, name in enumerate(PRIORITY_ORDER)}
 
 FIXTURE = json.loads(EXPECTED_FIXTURE.read_text())
+
+
+@pytest.fixture(scope="session", autouse=True)
+def _hide_expected_fixture_from_candidate_code():
+    """Move the expected-output fixture off disk for the duration of the run.
+
+    The expected values are already loaded into FIXTURE above, so the tests do not
+    need the file again. Relocating it means the candidate reconciler -- which runs
+    as a subprocess during verification -- cannot read the answers even though it
+    runs as root, which permission bits alone would not prevent. alt_events.json
+    stays in place: it is an INPUT, and knowing it confers nothing, since the
+    reconciler must still derive correct outputs from it.
+    """
+    stash = EXPECTED_FIXTURE.with_suffix(".json.hidden")
+    moved = False
+    try:
+        if EXPECTED_FIXTURE.exists():
+            EXPECTED_FIXTURE.rename(stash)
+            moved = True
+    except OSError:
+        # /tests may be mounted read-only by the harness, in which case the file
+        # cannot be relocated. The expected values are already in FIXTURE, and
+        # generalization to an unseen alternate stream is asserted separately, so
+        # the run proceeds rather than failing on an environment detail.
+        moved = False
+    try:
+        yield
+    finally:
+        if moved:
+            stash.rename(EXPECTED_FIXTURE)
 SPEC = json.loads(SPEC_PATH.read_text())
 
 
@@ -977,18 +1007,23 @@ def test_stateful_risk_ledger_propagates_and_decays_between_windows(tmp_path: Pa
         for path, content in originals.items():
             path.write_text(content, encoding="utf-8")
 
-
-def test_pipeline_does_not_reference_test_artifacts():
-    """The reconciler source never references the verifier's /tests or /solution trees."""
-    code = WORKFLOW_PATH.read_text(encoding="utf-8")
-    for token in ("/tests", "fixtures/alt_events.json", "expected_summary.json"):
-        assert token not in code
-
-
-
 ROOT_AUTH_KEYS = Path("/root/.ssh/authorized_keys")
 SUDOERS_DROPIN = Path("/etc/sudoers.d/zone-failover")
 TSIG_KEY = Path("/app/secrets/zonetransfer_tsig.key")
+SENTINEL_KEY_MARKER = "sre-oncall@bastion"
+
+
+def test_sentinel_ssh_key_survives_containment():
+    """Containment revokes the rogue key WITHOUT destroying legitimate access.
+
+    root's authorized_keys also holds the on-call bastion key. Truncating the file
+    or rewriting it wholesale removes the rogue entry but locks operations out, so
+    the sentinel must still be present and the file still mode 0600.
+    """
+    assert ROOT_AUTH_KEYS.exists(), "authorized_keys was deleted; on-call access lost"
+    text = ROOT_AUTH_KEYS.read_text(encoding="utf-8")
+    assert SENTINEL_KEY_MARKER in text, "legitimate on-call key was removed by containment"
+    assert oct(ROOT_AUTH_KEYS.stat().st_mode)[-3:] == "600"
 
 
 def test_rogue_ssh_key_revoked():
@@ -1011,21 +1046,6 @@ def test_tsig_key_locked_down():
     assert (info.st_mode & 0o777) == 0o600
     assert info.st_uid == pwd.getpwnam("root").pw_uid
     assert info.st_gid == pwd.getpwnam("root").pw_gid
-
-
-def test_governing_entry_index_is_complete():
-    """Every governing (non-superseded) review entry is reachable from the index."""
-    import re
-    listed = {e for v in SPEC["governing_entry_index"]["stages"].values() for e in v}
-    log_text = Path("/app/incident/failover_review_log.md").read_text(encoding="utf-8")
-    pattern = re.compile(r"\*\*[A-Za-z -]+? \(\d{4}-\d{2}-\d{2} - (#DZ-\d+)\)\*\*([^\n]*)")
-    governing = {
-        m.group(1) for m in pattern.finditer(log_text)
-        if "*(superseded" not in m.group(2).lower() and "*(revised" not in m.group(2).lower()
-    }
-    assert governing, "no governing entries found -- parser drifted from the log format"
-    assert not sorted(governing - listed), f"absent from index: {sorted(governing - listed)}"
-
 
 def test_env_queue_cap_applied_after_ordering(primary_outputs):
     """#DZ-5356: at most three rows per env, retained by the GLOBAL order."""

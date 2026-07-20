@@ -4,7 +4,7 @@ Required hardened state for resolver hosts touched by the failed DNS zone-failov
 
 ## SSH persistence
 
-The failover automation appended its deploy key to root's `authorized_keys`, identified by the key comment `zone-failover-automation`. Revoke it: no entry carrying that comment may remain in `/root/.ssh/authorized_keys`. Other entries in the file, if any, are legitimate and stay.
+The failover automation appended its deploy key to root's `authorized_keys`, identified by the key comment `zone-failover-automation`. Revoke it: no entry carrying that comment may remain in `/root/.ssh/authorized_keys`. The file also carries the SRE on-call bastion key (comment `sre-oncall@bastion`). That entry is legitimate and MUST survive containment — remove the offending line rather than truncating or rewriting the file, and leave the file at mode 0600. Locking operations out of the host is a containment failure, not a containment success.
 
 ## Privilege escalation
 

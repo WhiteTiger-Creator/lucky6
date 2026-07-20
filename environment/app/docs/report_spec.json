@@ -132,36 +132,7 @@
       "defer_windows": "/app/data/defer_windows.json",
       "zone_delegation_edges": "/app/data/zone_delegation_edges.json"
     },
-    "forbidden_executable_tokens": [
-      "event[\"seen_ms\"]",
-      "severity == \"p1\""
-    ],
-    "required_executable_tokens": [
-      "int(",
-      ".lower(",
-      ".strip(",
-      "reverse=True",
-      "\"yes\"",
-      "REOPEN_PATH",
-      "ROTATION_PATH",
-      "DEFER_PATH",
-      "ZONE_DELEGATION_EDGES_PATH",
-      "reopen_compaction_checksum",
-      "rotation_compaction_checksum",
-      "defer_compaction_checksum",
-      "stability_pressure_score",
-      "volatility_index",
-      "defer_pressure_score",
-      "ledger_pressure_score",
-      "ledger_adjusted_actionable_ms",
-      "ledger_checksum",
-      "trust_edge_checksum",
-      "trust_exposure_score",
-      "trust_path_digest",
-      "stability_index",
-      "window_digest"
-    ],
-    "token_check_scope": "executable code only (exclude comments and docstrings)"
+    "generalization_contract": "The reconciler is graded on behaviour, not on source text. It must derive every value from the operational inputs and the governing decisions, run correctly against an alternate alert stream supplied via --input, and produce identical outputs on reruns. Hardcoded, stubbed or fixture-copied outputs fail these checks. No particular identifiers, helper names or code structure are required."
   },
   "digest_payloads": {
     "trust_path_digest": "first 12 lowercase hex chars of sha256(origin|trust_exposure_score|semicolon_joined_target_rows), where each target row in trust_reachable_envs order is target:score:path_nodes_joined_by_>"
@@ -381,72 +352,5 @@
   "semantics_source": {
     "notes": "This document is the output contract only: file paths, schemas, required fields, repair tokens, digest payloads and checksum serialization. It does NOT define how values are derived.",
     "authority": "Canonicalization, dedupe tie-breaks, window merging, the freeze/reopen/rotation/defer attenuation layers and their scope rules, probe scoring, the risk ledger, zone delegation traversal, queue admission, priority rules and queue ordering were settled by the failover governance board; the authoritative record is /app/incident/failover_review_log.md. Where an early draft proposal conflicts with a later governance decision, the later decision wins."
-  },
-  "governing_entry_index": {
-    "_note": "Navigation aid only. It records WHICH review entries carry the governing rule for each stage; it does not restate any rule, value, divisor, threshold or rounding direction.",
-    "stages": {
-      "canonicalization": [
-        "#DZ-5301"
-      ],
-      "deduplication": [
-        "#DZ-5302",
-        "#DZ-5366"
-      ],
-      "window_construction": [
-        "#DZ-5304",
-        "#DZ-5370"
-      ],
-      "freeze_layer": [
-        "#DZ-5305"
-      ],
-      "reopen_layer": [
-        "#DZ-5307"
-      ],
-      "rotation_layer": [
-        "#DZ-5308",
-        "#DZ-5354",
-        "#DZ-5374"
-      ],
-      "defer_layer": [
-        "#DZ-5310"
-      ],
-      "layer_interaction": [
-        "#DZ-5354"
-      ],
-      "probe_scoring": [
-        "#DZ-5311",
-        "#DZ-5376",
-        "#DZ-5386"
-      ],
-      "risk_ledger": [
-        "#DZ-5313",
-        "#DZ-5314",
-        "#DZ-5368",
-        "#DZ-5378",
-        "#DZ-5380"
-      ],
-      "trust_graph": [
-        "#DZ-5316",
-        "#DZ-5317",
-        "#DZ-5319",
-        "#DZ-5320"
-      ],
-      "queue_admission": [
-        "#DZ-5322"
-      ],
-      "priority_assignment": [
-        "#DZ-5323",
-        "#DZ-5372"
-      ],
-      "queue_ordering": [
-        "#DZ-5325"
-      ],
-      "queue_capacity": [
-        "#DZ-5356"
-      ]
-    },
-    "rounding_warning": "Rounding direction is not uniform and is not inferable from any neighbouring divisor.",
-    "reversal_warning": "At least one stage has had the DIRECTION of a comparison reversed by a later entry.",
-    "interaction_warning": "The scoped attenuation layers are NOT independent. One layer pair has a precedence rule assigning their shared time to a single layer; a third layer is excluded. That rule is #DZ-5354, listed under layer_interaction."
   }
 }

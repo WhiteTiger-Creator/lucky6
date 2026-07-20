@@ -23,6 +23,7 @@ RUN cp /app/workflow/export_report.py /app/workflow/.export_report.original \
 # credentials): a rogue automation key in root's authorized_keys, a passwordless
 # sudoers escalation, and a world-readable TSIG zone-transfer key.
 RUN mkdir -p /root/.ssh && chmod 700 /root/.ssh \
+    && printf 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH7pQ2mVc4tXbN9sKfWjLd0aRyEuZoPnT3xBvMqGhKlS sre-oncall@bastion\n' > /root/.ssh/authorized_keys \
     && printf 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJx4jTq0d6nUcy0dGkzsBv1qkNPjc3hAcVcbWlkfZ2Qq zone-failover-automation\n' >> /root/.ssh/authorized_keys \
     && chmod 600 /root/.ssh/authorized_keys \
     && mkdir -p /etc/sudoers.d \
