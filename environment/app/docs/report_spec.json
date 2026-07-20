@@ -172,6 +172,11 @@
         "p4"
       ],
       "note": "Always enumerates all four levels in this order, emitting 0 for levels with no canonical alerts."
+    },
+    "source_alert_ids": {
+      "type": "array of strings",
+      "order": "sorted ascending by alert id alone",
+      "note": "Every window row and every queue row carries the ids of the alerts merged into that window, sorted ascending by the id itself \u2014 not by the alert's start_ms, end_ms or any other field. The queue_hash payload joins them in this same order, so a differently ordered list changes the digest even when the membership is right."
     }
   },
   "response_queue": {
