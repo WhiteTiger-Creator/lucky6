@@ -211,7 +211,7 @@ def test_windows_schema_and_sorting(primary_outputs):
                 row["effective_duration_ms"] - (-(-row["reopen_overlap_ms"] // 2)), 0
             )
             assert row["dispatchable_duration_ms"] == max(
-                row["risk_adjusted_duration_ms"] - (row["rotation_overlap_ms"] // 3), 0
+                row["risk_adjusted_duration_ms"] - (-(-row["rotation_overlap_ms"] // 3)), 0
             )
             assert row["actionable_duration_ms"] == max(
                 row["dispatchable_duration_ms"] - (-(-row["defer_overlap_ms"] // 4)), 0
@@ -278,15 +278,15 @@ def test_priority_rules(primary_outputs):
     for row in queue:
         if (
             row["max_severity"] == "p1"
-            and row["ledger_adjusted_actionable_ms"] >= 235
+            and row["ledger_adjusted_actionable_ms"] >= 454
         ) or (
-            row["ledger_adjusted_actionable_ms"] >= 500
-            or row["stability_index"] >= 20
-            or row["trust_exposure_score"] >= 24
+            row["ledger_adjusted_actionable_ms"] >= 600
+            or row["stability_index"] >= 31
+            or row["trust_exposure_score"] >= 35
         ):
             assert row["priority"] == "critical"
-        elif row["ledger_adjusted_actionable_ms"] >= 265 or (
-            row["alert_count"] >= 3 and row["max_severity"] in {"p1", "p2"}
+        elif row["ledger_adjusted_actionable_ms"] >= 330 or (
+            row["alert_count"] >= 2 and row["max_severity"] in {"p1", "p2"}
         ) or (
             row["rotation_segment_count"] == 0
             and row["risk_adjusted_duration_ms"] >= 340
@@ -295,7 +295,7 @@ def test_priority_rules(primary_outputs):
             and row["dispatchable_duration_ms"] >= 320
         ) or (
             row["reopen_segment_count"] == 0 and row["duration_ms"] >= 420
-        ) or row["trust_exposure_score"] >= 12:
+        ) or row["trust_exposure_score"] >= 20:
             assert row["priority"] == "high"
         else:
             assert row["priority"] == "medium"
@@ -662,8 +662,8 @@ def test_reopen_compaction_and_scope_are_used(tmp_path: Path):
             },
             {
                 "alert_id": "r2",
-                "start_ms": 500,
-                "end_ms": 800,
+                "start_ms": 521,
+                "end_ms": 821,
                 "severity": "p2",
                 "env": "lab",
                 "signature": "beta",
@@ -684,7 +684,7 @@ def test_reopen_compaction_and_scope_are_used(tmp_path: Path):
         assert summary["reopen_compaction_checksum"] == hashlib.sha256(
             "lab|all|150|240\nlab|p1|260|320".encode("utf-8")
         ).hexdigest()
-        assert [row["ticket_id"] for row in queue] == ["lab:500-800", "lab:100-400"]
+        assert [row["ticket_id"] for row in queue] == ["lab:521-821", "lab:100-400"]
     finally:
         REOPEN_PATH.write_text(original_reopen, encoding="utf-8")
 
@@ -712,8 +712,8 @@ def test_rotation_compaction_and_scope_are_used(tmp_path: Path):
             },
             {
                 "alert_id": "z2",
-                "start_ms": 500,
-                "end_ms": 820,
+                "start_ms": 521,
+                "end_ms": 841,
                 "severity": "p2",
                 "env": "lab",
                 "signature": "beta",
@@ -728,7 +728,7 @@ def test_rotation_compaction_and_scope_are_used(tmp_path: Path):
         assert first["rotation_overlap_ms"] == 160
         assert first["rotation_segment_count"] == 2
         assert first["dispatchable_duration_ms"] == max(
-            first["risk_adjusted_duration_ms"] - (160 // 3), 0
+            first["risk_adjusted_duration_ms"] - (-(-160 // 3)), 0
         )
         assert second["rotation_overlap_ms"] == 0
         assert summary["total_rotation_overlap_ms"] == 160
@@ -736,7 +736,7 @@ def test_rotation_compaction_and_scope_are_used(tmp_path: Path):
         assert summary["rotation_compaction_checksum"] == hashlib.sha256(
             "lab|all|130|240\nlab|p1|260|310".encode("utf-8")
         ).hexdigest()
-        assert [row["ticket_id"] for row in queue] == ["lab:100-400", "lab:500-820"]
+        assert [row["ticket_id"] for row in queue] == ["lab:521-841", "lab:100-400"]
     finally:
         ROTATION_PATH.write_text(original_rotation, encoding="utf-8")
 
@@ -764,8 +764,8 @@ def test_defer_compaction_and_scope_are_used(tmp_path: Path):
             },
             {
                 "alert_id": "q2",
-                "start_ms": 500,
-                "end_ms": 860,
+                "start_ms": 541,
+                "end_ms": 901,
                 "severity": "p2",
                 "env": "lab",
                 "signature": "beta",
@@ -788,7 +788,7 @@ def test_defer_compaction_and_scope_are_used(tmp_path: Path):
         assert summary["defer_compaction_checksum"] == hashlib.sha256(
             "lab|all|110|250\nlab|p1|255|325".encode("utf-8")
         ).hexdigest()
-        assert [row["ticket_id"] for row in queue] == ["lab:100-420", "lab:500-860"]
+        assert [row["ticket_id"] for row in queue] == ["lab:541-901", "lab:100-420"]
     finally:
         DEFER_PATH.write_text(original_defer, encoding="utf-8")
 
@@ -820,8 +820,8 @@ def test_p2_windows_borrow_p1_scope_when_p2_scope_missing(tmp_path: Path):
                 {
                     "env": "lab",
                     "severity_scope": "p1",
-                    "start_ms": 150,
-                    "end_ms": 250,
+                    "start_ms": 200,
+                    "end_ms": 300,
                 }
             ],
         )
@@ -852,11 +852,13 @@ def test_p2_windows_borrow_p1_scope_when_p2_scope_missing(tmp_path: Path):
         _, summary, windows, queue = _run_pipeline(tmp_path / "run", input_path=input_path)
         window = windows["lab"][0]
         assert window["reopen_overlap_ms"] == 100
-        assert window["rotation_overlap_ms"] == 100
+        # rotation [200,300) shares 50ms with reopen [150,250); #DZ-5354 assigns
+        # that shared time to reopen, so rotation keeps only its own 50ms.
+        assert window["rotation_overlap_ms"] == 50
         assert window["defer_overlap_ms"] == 100
         assert window["risk_adjusted_duration_ms"] == 250
-        assert window["dispatchable_duration_ms"] == 217
-        assert window["actionable_duration_ms"] == 192
+        assert window["dispatchable_duration_ms"] == 233
+        assert window["actionable_duration_ms"] == 208
         assert summary["queued_window_count"] == 0
         assert queue == []
     finally:
@@ -970,7 +972,7 @@ def test_stateful_risk_ledger_propagates_and_decays_between_windows(tmp_path: Pa
         assert summary["max_carry_out_ms"] == 450
         assert len(summary["ledger_checksum"]) == 64
         second_queue = next(row for row in queue if row["ticket_id"] == "lab:600-850")
-        assert second_queue["ledger_pressure_score"] == (450 // 80) + (200 // 120)
+        assert second_queue["ledger_pressure_score"] == (-(-450 // 80)) + (-(-200 // 120))
     finally:
         for path, content in originals.items():
             path.write_text(content, encoding="utf-8")
@@ -1009,3 +1011,33 @@ def test_tsig_key_locked_down():
     assert (info.st_mode & 0o777) == 0o600
     assert info.st_uid == pwd.getpwnam("root").pw_uid
     assert info.st_gid == pwd.getpwnam("root").pw_gid
+
+
+def test_governing_entry_index_is_complete():
+    """Every governing (non-superseded) review entry is reachable from the index."""
+    import re
+    listed = {e for v in SPEC["governing_entry_index"]["stages"].values() for e in v}
+    log_text = Path("/app/incident/failover_review_log.md").read_text(encoding="utf-8")
+    pattern = re.compile(r"\*\*[A-Za-z -]+? \(\d{4}-\d{2}-\d{2} - (#DZ-\d+)\)\*\*([^\n]*)")
+    governing = {
+        m.group(1) for m in pattern.finditer(log_text)
+        if "*(superseded" not in m.group(2).lower() and "*(revised" not in m.group(2).lower()
+    }
+    assert governing, "no governing entries found -- parser drifted from the log format"
+    assert not sorted(governing - listed), f"absent from index: {sorted(governing - listed)}"
+
+
+def test_env_queue_cap_applied_after_ordering(primary_outputs):
+    """#DZ-5356: at most three rows per env, retained by the GLOBAL order."""
+    _, _, windows, queue = primary_outputs
+    per_env = {}
+    for row in queue:
+        per_env[row["env"]] = per_env.get(row["env"], 0) + 1
+    assert per_env and max(per_env.values()) <= 3, f"env exceeded the cap: {per_env}"
+    eligible = sum(1 for b in (x for v in windows.values() for x in v)
+                   if b["max_severity"] in {"p1", "p2"})
+    assert eligible > len(queue), "fixture must exceed the cap for the rule to matter"
+    order = [r["env"] for r in queue]
+    for env in per_env:
+        idxs = [i for i, e in enumerate(order) if e == env]
+        assert idxs == sorted(idxs)

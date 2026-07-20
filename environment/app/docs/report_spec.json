@@ -1,5 +1,122 @@
 {
   "title": "DNS Authoritative-Zone Drift Incident-Response Runbook",
+  "required_keys_at_a_glance": {
+    "_note": "Read this block first. It is placed at the top of the contract so that a truncated or paged read still yields the complete key set for all three artifacts. Full per-field detail follows below.",
+    "summary_json_keys": [
+      "canonical_alert_checksum",
+      "canonical_alert_count",
+      "defer_compaction_checksum",
+      "env_count",
+      "freeze_compaction_checksum",
+      "ledger_checksum",
+      "longest_window_ms",
+      "max_carry_out_ms",
+      "max_defer_pressure_score",
+      "max_ledger_pressure_score",
+      "max_stability_index",
+      "max_stability_pressure_score",
+      "max_trust_exposure_score",
+      "max_volatility_index",
+      "muted_excluded_count",
+      "queue_hash_checksum",
+      "queued_window_count",
+      "raw_alert_count",
+      "reopen_compaction_checksum",
+      "rotation_compaction_checksum",
+      "schema_version",
+      "severity_counts",
+      "total_actionable_duration_ms",
+      "total_defer_overlap_ms",
+      "total_defer_segment_count",
+      "total_dispatchable_duration_ms",
+      "total_effective_duration_ms",
+      "total_freeze_overlap_ms",
+      "total_freeze_segment_count",
+      "total_ledger_adjusted_actionable_ms",
+      "total_reopen_overlap_ms",
+      "total_reopen_segment_count",
+      "total_risk_adjusted_duration_ms",
+      "total_rotation_overlap_ms",
+      "total_rotation_segment_count",
+      "total_unmuted_duration_ms",
+      "trust_edge_checksum",
+      "trust_path_digest_checksum",
+      "unique_alert_ids",
+      "window_digest_checksum"
+    ],
+    "drift_windows_block_keys": [
+      "actionable_duration_ms",
+      "alert_count",
+      "carry_in_ms",
+      "carry_out_ms",
+      "defer_overlap_ms",
+      "defer_segment_count",
+      "dispatchable_duration_ms",
+      "duration_ms",
+      "effective_duration_ms",
+      "end_ms",
+      "freeze_overlap_ms",
+      "freeze_segment_count",
+      "idle_gap_ms",
+      "ledger_adjusted_actionable_ms",
+      "max_severity",
+      "reopen_overlap_ms",
+      "reopen_segment_count",
+      "risk_adjusted_duration_ms",
+      "rotation_overlap_ms",
+      "rotation_segment_count",
+      "source_alert_ids",
+      "start_ms",
+      "trust_exposure_score",
+      "trust_path_digest",
+      "trust_reachable_envs",
+      "trust_strongest_path"
+    ],
+    "incident_queue_row_keys": [
+      "actionable_duration_ms",
+      "alert_count",
+      "carry_in_ms",
+      "carry_out_ms",
+      "defer_overlap_ms",
+      "defer_pressure_score",
+      "defer_segment_count",
+      "dispatchable_duration_ms",
+      "duration_ms",
+      "effective_duration_ms",
+      "end_ms",
+      "env",
+      "freeze_overlap_ms",
+      "freeze_segment_count",
+      "idle_gap_ms",
+      "ledger_adjusted_actionable_ms",
+      "ledger_pressure_score",
+      "max_severity",
+      "priority",
+      "queue_hash",
+      "reopen_overlap_ms",
+      "reopen_segment_count",
+      "risk_adjusted_duration_ms",
+      "rotation_overlap_ms",
+      "rotation_segment_count",
+      "source_alert_ids",
+      "stability_index",
+      "stability_pressure_score",
+      "start_ms",
+      "ticket_id",
+      "trust_exposure_score",
+      "trust_path_digest",
+      "trust_reachable_envs",
+      "trust_strongest_path",
+      "volatility_index",
+      "window_digest"
+    ],
+    "counts": {
+      "summary_json": 40,
+      "drift_windows_block": 26,
+      "response_queue_row": 36
+    },
+    "read_tip": "To read this reliably without paging, extract it directly, e.g. python3 -c \"import json;d=json.load(open('/app/docs/report_spec.json'))['required_keys_at_a_glance'];print(len(d['summary_json_keys']),d['summary_json_keys'])\""
+  },
   "version": "2.0",
   "task_scope": "security operations / DNS authoritative-zone drift containment",
   "operational_purpose": "reconcile DNS zone-drift evidence, approved attenuation windows, and stateful environment risk into a deterministic containment queue",
@@ -264,5 +381,67 @@
   "semantics_source": {
     "notes": "This document is the output contract only: file paths, schemas, required fields, repair tokens, digest payloads and checksum serialization. It does NOT define how values are derived.",
     "authority": "Canonicalization, dedupe tie-breaks, window merging, the freeze/reopen/rotation/defer attenuation layers and their scope rules, probe scoring, the risk ledger, zone delegation traversal, queue admission, priority rules and queue ordering were settled by the failover governance board; the authoritative record is /app/incident/failover_review_log.md. Where an early draft proposal conflicts with a later governance decision, the later decision wins."
+  },
+  "governing_entry_index": {
+    "_note": "Navigation aid only. It records WHICH review entries carry the governing rule for each stage; it does not restate any rule, value, divisor, threshold or rounding direction.",
+    "stages": {
+      "canonicalization": [
+        "#DZ-5301"
+      ],
+      "deduplication": [
+        "#DZ-5302",
+        "#DZ-5366"
+      ],
+      "window_construction": [
+        "#DZ-5304",
+        "#DZ-5370"
+      ],
+      "freeze_layer": [
+        "#DZ-5305"
+      ],
+      "reopen_layer": [
+        "#DZ-5307"
+      ],
+      "rotation_layer": [
+        "#DZ-5308",
+        "#DZ-5354"
+      ],
+      "defer_layer": [
+        "#DZ-5310"
+      ],
+      "layer_interaction": [
+        "#DZ-5354"
+      ],
+      "probe_scoring": [
+        "#DZ-5311"
+      ],
+      "risk_ledger": [
+        "#DZ-5313",
+        "#DZ-5314",
+        "#DZ-5368"
+      ],
+      "trust_graph": [
+        "#DZ-5316",
+        "#DZ-5317",
+        "#DZ-5319",
+        "#DZ-5320"
+      ],
+      "queue_admission": [
+        "#DZ-5322"
+      ],
+      "priority_assignment": [
+        "#DZ-5323",
+        "#DZ-5372"
+      ],
+      "queue_ordering": [
+        "#DZ-5325"
+      ],
+      "queue_capacity": [
+        "#DZ-5356"
+      ]
+    },
+    "rounding_warning": "Rounding direction is not uniform and is not inferable from any neighbouring divisor.",
+    "reversal_warning": "At least one stage has had the DIRECTION of a comparison reversed by a later entry.",
+    "interaction_warning": "The scoped attenuation layers are NOT independent. One layer pair has a precedence rule assigning their shared time to a single layer; a third layer is excluded. That rule is #DZ-5354, listed under layer_interaction."
   }
 }
