@@ -160,5 +160,53 @@
     "severity_scope": "all",
     "start_ms": 2010518204597,
     "end_ms": 2010518204697
+  },
+  {
+    "env": "core",
+    "severity_scope": "all",
+    "start_ms": 2010517807632,
+    "end_ms": 2010517807737
+  },
+  {
+    "env": "dmz",
+    "severity_scope": "all",
+    "start_ms": 2010517208130,
+    "end_ms": 2010517208235
+  },
+  {
+    "env": "dns",
+    "severity_scope": "all",
+    "start_ms": 2010518007870,
+    "end_ms": 2010518007975
+  },
+  {
+    "env": "edge",
+    "severity_scope": "all",
+    "start_ms": 2010517407554,
+    "end_ms": 2010517407659
+  },
+  {
+    "env": "mesh",
+    "severity_scope": "all",
+    "start_ms": 2010518406360,
+    "end_ms": 2010518406465
+  },
+  {
+    "env": "prod",
+    "severity_scope": "all",
+    "start_ms": 2010517009159,
+    "end_ms": 2010517009264
+  },
+  {
+    "env": "vault",
+    "severity_scope": "all",
+    "start_ms": 2010517607802,
+    "end_ms": 2010517607907
+  },
+  {
+    "env": "zone",
+    "severity_scope": "all",
+    "start_ms": 2010518207243,
+    "end_ms": 2010518207348
   }
 ]

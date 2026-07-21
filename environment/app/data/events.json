@@ -655,5 +655,365 @@
     "env": "zone",
     "signature": "zone transfer denied",
     "muted": false
+  },
+  {
+    "alert_id": "x8001",
+    "start_ms": 2010517805812,
+    "end_ms": 2010517806112,
+    "severity": "p1",
+    "env": "core",
+    "signature": "dnssec rrsig expiry",
+    "muted": false
+  },
+  {
+    "alert_id": "x8002",
+    "start_ms": 2010517806277,
+    "end_ms": 2010517806539,
+    "severity": "p2",
+    "env": "core",
+    "signature": "zone transfer denied",
+    "muted": false
+  },
+  {
+    "alert_id": "x8003",
+    "start_ms": 2010517806689,
+    "end_ms": 2010517807007,
+    "severity": "p1",
+    "env": "core",
+    "signature": "ds record stale",
+    "muted": false
+  },
+  {
+    "alert_id": "x8004",
+    "start_ms": 2010517807182,
+    "end_ms": 2010517807432,
+    "severity": "p2",
+    "env": "core",
+    "signature": "dnssec rrsig expiry",
+    "muted": false
+  },
+  {
+    "alert_id": "x8005",
+    "start_ms": 2010517807587,
+    "end_ms": 2010517807873,
+    "severity": "p1",
+    "env": "core",
+    "signature": "zone transfer denied",
+    "muted": false
+  },
+  {
+    "alert_id": "x8006",
+    "start_ms": 2010517206310,
+    "end_ms": 2010517206610,
+    "severity": "p1",
+    "env": "dmz",
+    "signature": "glue record drift",
+    "muted": false
+  },
+  {
+    "alert_id": "x8007",
+    "start_ms": 2010517206775,
+    "end_ms": 2010517207037,
+    "severity": "p2",
+    "env": "dmz",
+    "signature": "soa serial regression",
+    "muted": false
+  },
+  {
+    "alert_id": "x8008",
+    "start_ms": 2010517207187,
+    "end_ms": 2010517207505,
+    "severity": "p1",
+    "env": "dmz",
+    "signature": "ns delegation mismatch",
+    "muted": false
+  },
+  {
+    "alert_id": "x8009",
+    "start_ms": 2010517207680,
+    "end_ms": 2010517207930,
+    "severity": "p2",
+    "env": "dmz",
+    "signature": "glue record drift",
+    "muted": false
+  },
+  {
+    "alert_id": "x8010",
+    "start_ms": 2010517208085,
+    "end_ms": 2010517208371,
+    "severity": "p1",
+    "env": "dmz",
+    "signature": "soa serial regression",
+    "muted": false
+  },
+  {
+    "alert_id": "x8011",
+    "start_ms": 2010518006050,
+    "end_ms": 2010518006350,
+    "severity": "p1",
+    "env": "dns",
+    "signature": "ds record stale",
+    "muted": false
+  },
+  {
+    "alert_id": "x8012",
+    "start_ms": 2010518006515,
+    "end_ms": 2010518006777,
+    "severity": "p2",
+    "env": "dns",
+    "signature": "dnssec rrsig expiry",
+    "muted": false
+  },
+  {
+    "alert_id": "x8013",
+    "start_ms": 2010518006927,
+    "end_ms": 2010518007245,
+    "severity": "p1",
+    "env": "dns",
+    "signature": "zone transfer denied",
+    "muted": false
+  },
+  {
+    "alert_id": "x8014",
+    "start_ms": 2010518007420,
+    "end_ms": 2010518007670,
+    "severity": "p2",
+    "env": "dns",
+    "signature": "ds record stale",
+    "muted": false
+  },
+  {
+    "alert_id": "x8015",
+    "start_ms": 2010518007825,
+    "end_ms": 2010518008111,
+    "severity": "p1",
+    "env": "dns",
+    "signature": "dnssec rrsig expiry",
+    "muted": false
+  },
+  {
+    "alert_id": "x8016",
+    "start_ms": 2010517405734,
+    "end_ms": 2010517406034,
+    "severity": "p1",
+    "env": "edge",
+    "signature": "ns delegation mismatch",
+    "muted": false
+  },
+  {
+    "alert_id": "x8017",
+    "start_ms": 2010517406199,
+    "end_ms": 2010517406461,
+    "severity": "p2",
+    "env": "edge",
+    "signature": "glue record drift",
+    "muted": false
+  },
+  {
+    "alert_id": "x8018",
+    "start_ms": 2010517406611,
+    "end_ms": 2010517406929,
+    "severity": "p1",
+    "env": "edge",
+    "signature": "soa serial regression",
+    "muted": false
+  },
+  {
+    "alert_id": "x8019",
+    "start_ms": 2010517407104,
+    "end_ms": 2010517407354,
+    "severity": "p2",
+    "env": "edge",
+    "signature": "ns delegation mismatch",
+    "muted": false
+  },
+  {
+    "alert_id": "x8020",
+    "start_ms": 2010517407509,
+    "end_ms": 2010517407795,
+    "severity": "p1",
+    "env": "edge",
+    "signature": "glue record drift",
+    "muted": false
+  },
+  {
+    "alert_id": "x8021",
+    "start_ms": 2010518404540,
+    "end_ms": 2010518404840,
+    "severity": "p1",
+    "env": "mesh",
+    "signature": "zone transfer denied",
+    "muted": false
+  },
+  {
+    "alert_id": "x8022",
+    "start_ms": 2010518405005,
+    "end_ms": 2010518405267,
+    "severity": "p2",
+    "env": "mesh",
+    "signature": "ds record stale",
+    "muted": false
+  },
+  {
+    "alert_id": "x8023",
+    "start_ms": 2010518405417,
+    "end_ms": 2010518405735,
+    "severity": "p1",
+    "env": "mesh",
+    "signature": "dnssec rrsig expiry",
+    "muted": false
+  },
+  {
+    "alert_id": "x8024",
+    "start_ms": 2010518405910,
+    "end_ms": 2010518406160,
+    "severity": "p2",
+    "env": "mesh",
+    "signature": "zone transfer denied",
+    "muted": false
+  },
+  {
+    "alert_id": "x8025",
+    "start_ms": 2010518406315,
+    "end_ms": 2010518406601,
+    "severity": "p1",
+    "env": "mesh",
+    "signature": "ds record stale",
+    "muted": false
+  },
+  {
+    "alert_id": "x8026",
+    "start_ms": 2010517007339,
+    "end_ms": 2010517007639,
+    "severity": "p1",
+    "env": "prod",
+    "signature": "soa serial regression",
+    "muted": false
+  },
+  {
+    "alert_id": "x8027",
+    "start_ms": 2010517007804,
+    "end_ms": 2010517008066,
+    "severity": "p2",
+    "env": "prod",
+    "signature": "ns delegation mismatch",
+    "muted": false
+  },
+  {
+    "alert_id": "x8028",
+    "start_ms": 2010517008216,
+    "end_ms": 2010517008534,
+    "severity": "p1",
+    "env": "prod",
+    "signature": "glue record drift",
+    "muted": false
+  },
+  {
+    "alert_id": "x8029",
+    "start_ms": 2010517008709,
+    "end_ms": 2010517008959,
+    "severity": "p2",
+    "env": "prod",
+    "signature": "soa serial regression",
+    "muted": false
+  },
+  {
+    "alert_id": "x8030",
+    "start_ms": 2010517009114,
+    "end_ms": 2010517009400,
+    "severity": "p1",
+    "env": "prod",
+    "signature": "ns delegation mismatch",
+    "muted": false
+  },
+  {
+    "alert_id": "x8031",
+    "start_ms": 2010517605982,
+    "end_ms": 2010517606282,
+    "severity": "p1",
+    "env": "vault",
+    "signature": "dnssec rrsig expiry",
+    "muted": false
+  },
+  {
+    "alert_id": "x8032",
+    "start_ms": 2010517606447,
+    "end_ms": 2010517606709,
+    "severity": "p2",
+    "env": "vault",
+    "signature": "zone transfer denied",
+    "muted": false
+  },
+  {
+    "alert_id": "x8033",
+    "start_ms": 2010517606859,
+    "end_ms": 2010517607177,
+    "severity": "p1",
+    "env": "vault",
+    "signature": "ds record stale",
+    "muted": false
+  },
+  {
+    "alert_id": "x8034",
+    "start_ms": 2010517607352,
+    "end_ms": 2010517607602,
+    "severity": "p2",
+    "env": "vault",
+    "signature": "dnssec rrsig expiry",
+    "muted": false
+  },
+  {
+    "alert_id": "x8035",
+    "start_ms": 2010517607757,
+    "end_ms": 2010517608043,
+    "severity": "p1",
+    "env": "vault",
+    "signature": "zone transfer denied",
+    "muted": false
+  },
+  {
+    "alert_id": "x8036",
+    "start_ms": 2010518205423,
+    "end_ms": 2010518205723,
+    "severity": "p1",
+    "env": "zone",
+    "signature": "glue record drift",
+    "muted": false
+  },
+  {
+    "alert_id": "x8037",
+    "start_ms": 2010518205888,
+    "end_ms": 2010518206150,
+    "severity": "p2",
+    "env": "zone",
+    "signature": "soa serial regression",
+    "muted": false
+  },
+  {
+    "alert_id": "x8038",
+    "start_ms": 2010518206300,
+    "end_ms": 2010518206618,
+    "severity": "p1",
+    "env": "zone",
+    "signature": "ns delegation mismatch",
+    "muted": false
+  },
+  {
+    "alert_id": "x8039",
+    "start_ms": 2010518206793,
+    "end_ms": 2010518207043,
+    "severity": "p2",
+    "env": "zone",
+    "signature": "glue record drift",
+    "muted": false
+  },
+  {
+    "alert_id": "x8040",
+    "start_ms": 2010518207198,
+    "end_ms": 2010518207484,
+    "severity": "p1",
+    "env": "zone",
+    "signature": "soa serial regression",
+    "muted": false
   }
 ]
