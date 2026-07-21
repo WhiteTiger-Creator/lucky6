@@ -70,5 +70,59 @@
     "severity_scope": "all",
     "start_ms": 2010518203500,
     "end_ms": 2010518203564
+  },
+  {
+    "env": "core",
+    "severity_scope": "all",
+    "start_ms": 2010517800037,
+    "end_ms": 2010517800132
+  },
+  {
+    "env": "core",
+    "severity_scope": "all",
+    "start_ms": 2010517801037,
+    "end_ms": 2010517801132
+  },
+  {
+    "env": "core",
+    "severity_scope": "all",
+    "start_ms": 2010517801937,
+    "end_ms": 2010517802032
+  },
+  {
+    "env": "core",
+    "severity_scope": "all",
+    "start_ms": 2010517803737,
+    "end_ms": 2010517803832
+  },
+  {
+    "env": "dmz",
+    "severity_scope": "all",
+    "start_ms": 2010517202037,
+    "end_ms": 2010517202132
+  },
+  {
+    "env": "dmz",
+    "severity_scope": "all",
+    "start_ms": 2010517203237,
+    "end_ms": 2010517203332
+  },
+  {
+    "env": "dmz",
+    "severity_scope": "all",
+    "start_ms": 2010517204237,
+    "end_ms": 2010517204332
+  },
+  {
+    "env": "dns",
+    "severity_scope": "all",
+    "start_ms": 2010517810037,
+    "end_ms": 2010517810132
+  },
+  {
+    "env": "dns",
+    "severity_scope": "all",
+    "start_ms": 2010518001037,
+    "end_ms": 2010518001132
   }
 ]
