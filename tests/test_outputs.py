@@ -315,7 +315,7 @@ def test_priority_rules(primary_outputs):
             or row["trust_exposure_score"] >= 35
         ):
             assert row["priority"] == "critical"
-        elif row["ledger_adjusted_actionable_ms"] >= 330 or (
+        elif row["ledger_adjusted_actionable_ms"] >= 236 or (
             row["alert_count"] >= 2 and row["max_severity"] in {"p1", "p2"}
         ) or (
             row["rotation_segment_count"] == 0

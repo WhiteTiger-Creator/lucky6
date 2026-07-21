@@ -602,7 +602,7 @@ def build_response_queue(
                 or window["trust_exposure_score"] >= 35
             ):
                 priority = "critical"
-            elif window["ledger_adjusted_actionable_ms"] >= 330 or (
+            elif window["ledger_adjusted_actionable_ms"] >= 236 or (
                 window["alert_count"] >= 2 and window["max_severity"] in {"p1", "p2"}
             ) or (
                 window["rotation_segment_count"] == 0
