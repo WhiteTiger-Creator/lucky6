@@ -544,9 +544,12 @@ def build_response_queue(
                 window["end_ms"],
                 reopen_severity,
             )
+            # #DZ-5388 revises #DZ-5307: the severity-scoped half of the base probe
+            # is ROUNDED UP while the all-scoped half keeps its floor, so this pair
+            # rounds in opposite directions like the rotation and defer probe pairs.
             stability_pressure_score = (
                 (all_probe_ms // 30)
-                + (severity_probe_ms // 20)
+                + (-(-severity_probe_ms // 20))
                 + max(window["alert_count"] - 1, 0)
             )
             rotation_all, rotation_severity = _scope_intervals_for_window(
