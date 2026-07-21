@@ -124,5 +124,101 @@
     "severity_scope": "all",
     "start_ms": 2010518001037,
     "end_ms": 2010518001132
+  },
+  {
+    "env": "core",
+    "severity_scope": "all",
+    "start_ms": 2010517804128,
+    "end_ms": 2010517804218
+  },
+  {
+    "env": "core",
+    "severity_scope": "all",
+    "start_ms": 2010517804568,
+    "end_ms": 2010517804658
+  },
+  {
+    "env": "dmz",
+    "severity_scope": "all",
+    "start_ms": 2010517204626,
+    "end_ms": 2010517204716
+  },
+  {
+    "env": "dmz",
+    "severity_scope": "all",
+    "start_ms": 2010517205066,
+    "end_ms": 2010517205156
+  },
+  {
+    "env": "dns",
+    "severity_scope": "all",
+    "start_ms": 2010518004366,
+    "end_ms": 2010518004456
+  },
+  {
+    "env": "dns",
+    "severity_scope": "all",
+    "start_ms": 2010518004806,
+    "end_ms": 2010518004896
+  },
+  {
+    "env": "edge",
+    "severity_scope": "all",
+    "start_ms": 2010517404050,
+    "end_ms": 2010517404140
+  },
+  {
+    "env": "edge",
+    "severity_scope": "all",
+    "start_ms": 2010517404490,
+    "end_ms": 2010517404580
+  },
+  {
+    "env": "mesh",
+    "severity_scope": "all",
+    "start_ms": 2010518402856,
+    "end_ms": 2010518402946
+  },
+  {
+    "env": "mesh",
+    "severity_scope": "all",
+    "start_ms": 2010518403296,
+    "end_ms": 2010518403386
+  },
+  {
+    "env": "prod",
+    "severity_scope": "all",
+    "start_ms": 2010517005655,
+    "end_ms": 2010517005745
+  },
+  {
+    "env": "prod",
+    "severity_scope": "all",
+    "start_ms": 2010517006095,
+    "end_ms": 2010517006185
+  },
+  {
+    "env": "vault",
+    "severity_scope": "all",
+    "start_ms": 2010517604298,
+    "end_ms": 2010517604388
+  },
+  {
+    "env": "vault",
+    "severity_scope": "all",
+    "start_ms": 2010517604738,
+    "end_ms": 2010517604828
+  },
+  {
+    "env": "zone",
+    "severity_scope": "all",
+    "start_ms": 2010518203739,
+    "end_ms": 2010518203829
+  },
+  {
+    "env": "zone",
+    "severity_scope": "all",
+    "start_ms": 2010518204179,
+    "end_ms": 2010518204269
   }
 ]

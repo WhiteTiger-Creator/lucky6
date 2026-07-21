@@ -367,5 +367,293 @@
     "env": "dns",
     "signature": "dup d",
     "muted": false
+  },
+  {
+    "alert_id": "x9001",
+    "start_ms": 2010517804088,
+    "end_ms": 2010517804388,
+    "severity": "p1",
+    "env": "core",
+    "signature": "ds record stale",
+    "muted": false
+  },
+  {
+    "alert_id": "x9002",
+    "start_ms": 2010517804538,
+    "end_ms": 2010517804806,
+    "severity": "p2",
+    "env": "core",
+    "signature": "dnssec rrsig expiry",
+    "muted": false
+  },
+  {
+    "alert_id": "x9003",
+    "start_ms": 2010517804936,
+    "end_ms": 2010517805258,
+    "severity": "p1",
+    "env": "core",
+    "signature": "zone transfer denied",
+    "muted": false
+  },
+  {
+    "alert_id": "x9004",
+    "start_ms": 2010517805418,
+    "end_ms": 2010517805672,
+    "severity": "p2",
+    "env": "core",
+    "signature": "ds record stale",
+    "muted": false
+  },
+  {
+    "alert_id": "x9005",
+    "start_ms": 2010517204586,
+    "end_ms": 2010517204886,
+    "severity": "p1",
+    "env": "dmz",
+    "signature": "zone transfer denied",
+    "muted": false
+  },
+  {
+    "alert_id": "x9006",
+    "start_ms": 2010517205036,
+    "end_ms": 2010517205304,
+    "severity": "p2",
+    "env": "dmz",
+    "signature": "ds record stale",
+    "muted": false
+  },
+  {
+    "alert_id": "x9007",
+    "start_ms": 2010517205434,
+    "end_ms": 2010517205756,
+    "severity": "p1",
+    "env": "dmz",
+    "signature": "dnssec rrsig expiry",
+    "muted": false
+  },
+  {
+    "alert_id": "x9008",
+    "start_ms": 2010517205916,
+    "end_ms": 2010517206170,
+    "severity": "p2",
+    "env": "dmz",
+    "signature": "zone transfer denied",
+    "muted": false
+  },
+  {
+    "alert_id": "x9009",
+    "start_ms": 2010518004326,
+    "end_ms": 2010518004626,
+    "severity": "p1",
+    "env": "dns",
+    "signature": "dnssec rrsig expiry",
+    "muted": false
+  },
+  {
+    "alert_id": "x9010",
+    "start_ms": 2010518004776,
+    "end_ms": 2010518005044,
+    "severity": "p2",
+    "env": "dns",
+    "signature": "zone transfer denied",
+    "muted": false
+  },
+  {
+    "alert_id": "x9011",
+    "start_ms": 2010518005174,
+    "end_ms": 2010518005496,
+    "severity": "p1",
+    "env": "dns",
+    "signature": "ds record stale",
+    "muted": false
+  },
+  {
+    "alert_id": "x9012",
+    "start_ms": 2010518005656,
+    "end_ms": 2010518005910,
+    "severity": "p2",
+    "env": "dns",
+    "signature": "dnssec rrsig expiry",
+    "muted": false
+  },
+  {
+    "alert_id": "x9013",
+    "start_ms": 2010517404010,
+    "end_ms": 2010517404310,
+    "severity": "p1",
+    "env": "edge",
+    "signature": "ds record stale",
+    "muted": false
+  },
+  {
+    "alert_id": "x9014",
+    "start_ms": 2010517404460,
+    "end_ms": 2010517404728,
+    "severity": "p2",
+    "env": "edge",
+    "signature": "dnssec rrsig expiry",
+    "muted": false
+  },
+  {
+    "alert_id": "x9015",
+    "start_ms": 2010517404858,
+    "end_ms": 2010517405180,
+    "severity": "p1",
+    "env": "edge",
+    "signature": "zone transfer denied",
+    "muted": false
+  },
+  {
+    "alert_id": "x9016",
+    "start_ms": 2010517405340,
+    "end_ms": 2010517405594,
+    "severity": "p2",
+    "env": "edge",
+    "signature": "ds record stale",
+    "muted": false
+  },
+  {
+    "alert_id": "x9017",
+    "start_ms": 2010518402816,
+    "end_ms": 2010518403116,
+    "severity": "p1",
+    "env": "mesh",
+    "signature": "zone transfer denied",
+    "muted": false
+  },
+  {
+    "alert_id": "x9018",
+    "start_ms": 2010518403266,
+    "end_ms": 2010518403534,
+    "severity": "p2",
+    "env": "mesh",
+    "signature": "ds record stale",
+    "muted": false
+  },
+  {
+    "alert_id": "x9019",
+    "start_ms": 2010518403664,
+    "end_ms": 2010518403986,
+    "severity": "p1",
+    "env": "mesh",
+    "signature": "dnssec rrsig expiry",
+    "muted": false
+  },
+  {
+    "alert_id": "x9020",
+    "start_ms": 2010518404146,
+    "end_ms": 2010518404400,
+    "severity": "p2",
+    "env": "mesh",
+    "signature": "zone transfer denied",
+    "muted": false
+  },
+  {
+    "alert_id": "x9021",
+    "start_ms": 2010517005615,
+    "end_ms": 2010517005915,
+    "severity": "p1",
+    "env": "prod",
+    "signature": "dnssec rrsig expiry",
+    "muted": false
+  },
+  {
+    "alert_id": "x9022",
+    "start_ms": 2010517006065,
+    "end_ms": 2010517006333,
+    "severity": "p2",
+    "env": "prod",
+    "signature": "zone transfer denied",
+    "muted": false
+  },
+  {
+    "alert_id": "x9023",
+    "start_ms": 2010517006463,
+    "end_ms": 2010517006785,
+    "severity": "p1",
+    "env": "prod",
+    "signature": "ds record stale",
+    "muted": false
+  },
+  {
+    "alert_id": "x9024",
+    "start_ms": 2010517006945,
+    "end_ms": 2010517007199,
+    "severity": "p2",
+    "env": "prod",
+    "signature": "dnssec rrsig expiry",
+    "muted": false
+  },
+  {
+    "alert_id": "x9025",
+    "start_ms": 2010517604258,
+    "end_ms": 2010517604558,
+    "severity": "p1",
+    "env": "vault",
+    "signature": "ds record stale",
+    "muted": false
+  },
+  {
+    "alert_id": "x9026",
+    "start_ms": 2010517604708,
+    "end_ms": 2010517604976,
+    "severity": "p2",
+    "env": "vault",
+    "signature": "dnssec rrsig expiry",
+    "muted": false
+  },
+  {
+    "alert_id": "x9027",
+    "start_ms": 2010517605106,
+    "end_ms": 2010517605428,
+    "severity": "p1",
+    "env": "vault",
+    "signature": "zone transfer denied",
+    "muted": false
+  },
+  {
+    "alert_id": "x9028",
+    "start_ms": 2010517605588,
+    "end_ms": 2010517605842,
+    "severity": "p2",
+    "env": "vault",
+    "signature": "ds record stale",
+    "muted": false
+  },
+  {
+    "alert_id": "x9029",
+    "start_ms": 2010518203699,
+    "end_ms": 2010518203999,
+    "severity": "p1",
+    "env": "zone",
+    "signature": "zone transfer denied",
+    "muted": false
+  },
+  {
+    "alert_id": "x9030",
+    "start_ms": 2010518204149,
+    "end_ms": 2010518204417,
+    "severity": "p2",
+    "env": "zone",
+    "signature": "ds record stale",
+    "muted": false
+  },
+  {
+    "alert_id": "x9031",
+    "start_ms": 2010518204547,
+    "end_ms": 2010518204869,
+    "severity": "p1",
+    "env": "zone",
+    "signature": "dnssec rrsig expiry",
+    "muted": false
+  },
+  {
+    "alert_id": "x9032",
+    "start_ms": 2010518205029,
+    "end_ms": 2010518205283,
+    "severity": "p2",
+    "env": "zone",
+    "signature": "zone transfer denied",
+    "muted": false
   }
 ]
