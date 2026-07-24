@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Reference fix for DNS zone-drift failover compiler."""
 
 from __future__ import annotations
@@ -256,8 +255,7 @@ def _max_disjoint_trust_packing(
 
     def pack(index: int, used: frozenset[str], total: int) -> None:
         nonlocal best_total
-        if total > best_total:
-            best_total = total
+        best_total = max(best_total, total)
         if index >= len(paths):
             return
         pack(index + 1, used, total)
@@ -309,7 +307,7 @@ def strongest_trust_exposure(
         for target in reachable
     ]
     path_digest = hashlib.sha256(
-        f"{origin}|{exposure_score}|{';'.join(path_rows)}".encode("utf-8")
+        f"{origin}|{exposure_score}|{';'.join(path_rows)}".encode()
     ).hexdigest()[:12]
     return {
         "trust_reachable_envs": reachable,
@@ -631,7 +629,7 @@ def build_response_queue(
                     f"{window['ledger_adjusted_actionable_ms']}|{stability_pressure_score}|"
                     f"{volatility_index}|{defer_pressure_score}|{ledger_pressure_score}|"
                     f"{window['trust_exposure_score']}|{window['trust_path_digest']}"
-                ).encode("utf-8")
+                ).encode()
             ).hexdigest()[:12]
             ticket_id = f"{env}:{window['start_ms']}-{window['end_ms']}"
             window_digest = hashlib.sha1(
@@ -640,7 +638,7 @@ def build_response_queue(
                     f"{window['ledger_adjusted_actionable_ms']}|{stability_index}|"
                     f"{defer_pressure_score}|{volatility_index}|{ledger_pressure_score}|"
                     f"{window['trust_exposure_score']}|{window['trust_path_digest']}"
-                ).encode("utf-8")
+                ).encode()
             ).hexdigest()[:10]
 
             queue.append(

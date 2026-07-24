@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Compile authoritative zone drift windows into the responder report set."""
 
 from __future__ import annotations
