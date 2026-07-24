@@ -590,6 +590,10 @@ def build_response_queue(
                 (-(-window["carry_out_ms"] // 80))
                 + (-(-window["carry_in_ms"] // 120))
                 + max(window["alert_count"] - 1, 0)
+                # #DZ-5392: zone-exposure amplifier, FLOORED. A window's attributed
+                # trust_exposure_score (node-disjoint packing + contention) feeds its
+                # ledger pressure, so a slip in the delegation packing corrupts this too.
+                + (window["trust_exposure_score"] // 7)
             )
             stability_index = (
                 volatility_index
