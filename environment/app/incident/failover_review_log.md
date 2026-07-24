@@ -63,6 +63,8 @@ Capacity review for lab showed the resolver pool at 67% headroom; autoscaler thr
 Ilya audited the vault resolver's cache eviction counters after the rollout and saw nothing anomalous.
 > **Failover draft proposal (2026-02-08 - #DZ-4812)** Anders: alerts whose end_ms will not parse as an integer should be dropped from the export entirely *(Superseded — reversed in the 2026-05 governance review; see the matching decision entry.)*
 
+> **Failover draft proposal (2026-02-09 - #DZ-4814)** Anders: alerts whose severity is not one of the recognized p1–p4 tiers should be treated as malformed and dropped from the export entirely *(Superseded — reversed in the 2026-05 governance review; see the matching decision entry.)*
+
 ### Capacity review 0014 — vault (north) lane
 A proposal resembling the superseded #DZ-4831 draft resurfaced in vault planning; it was closed with a pointer to the later decision that reversed it.
 Vendor callback on the core appliance closed without action; firmware was already at the approved level.
@@ -504,7 +506,7 @@ Priya walked the dns replica logs after the rollout window and found the drift a
 ### Audit entry 0115 — zone (west) lane
 Config drift on the zone resolver — an out-of-band TTL override on 394 records — was reverted within the day shift and changed no governing value.
 Paging test against lab completed on the EU-early shift; the responder ack path answered within the agreed window.
-> **Zone-governance ruling (2026-05-02 - #DZ-5301)** Yusuf: canonicalization: env — normalize env via str(...).strip().lower(); severity — normalize severity via str(...).strip().lower(); signature — collapse internal whitespace for signature; end_ms — coerce end_ms to int after trim; invalid -> 0, and the row is KEPT, not dropped (supersedes #DZ-4812); muted — booleans unchanged; strings true/1/yes => true, all other strings => false; non-string/non-bool use Python bool(value).
+> **Zone-governance ruling (2026-05-02 - #DZ-5301)** Yusuf: canonicalization: env — normalize env via str(...).strip().lower(); severity — normalize severity via str(...).strip().lower(), then classify any value that is not one of p1/p2/p3/p4 as p4 (the lowest tier); the row is KEPT and counted under that p4 classification, never dropped, so a legacy or unrecognized code such as sev9 ranks and counts as p4 (supersedes #DZ-4814); signature — collapse internal whitespace for signature; end_ms — coerce end_ms to int after trim; invalid -> 0, and the row is KEPT, not dropped (supersedes #DZ-4812); muted — booleans unchanged; strings true/1/yes => true, all other strings => false; non-string/non-bool use Python bool(value).
 
 > **Governance decision (2026-05-21 - #DZ-5366)** Yusuf: duplicate-severity precedence is REVERSED. Zone-drift duplicates are mostly re-emissions from the delegation watchdog, which escalates a repeated alert before an operator confirms it. Where two rows share an `alert_id` and tie on `end_ms`, the row with the LOWER severity rank is kept: p4 beats p3, p3 beats p2, p2 beats p1. Only this comparison changes.
 
@@ -1201,6 +1203,8 @@ Handover for mesh at the US-west boundary listed no open drift items; the incomi
 > **Failover board decision (2026-05-19 - #DZ-5378)** Yusuf: idle-gap decay rounding. The decay applied to the incoming carry is ROUNDED UP: `carry_in_ms = max(previous_carry_out_ms - ceil(idle_gap_ms / 2), 0)`. Note this is the decay, not a credit: rounding it up decays MORE carry, not less. This revises the floored `// 2` form recorded in #DZ-5313. ROUNDING: idle_gap_ms // 2 = CEIL.
 
 > **Zone-governance ruling (2026-05-21 - #DZ-5368)** Yusuf: risk-ledger carry-out cap retuned to 900 ms, applied after the computed value, so a window whose computed carry is exactly 900 is unaffected and one above it clamps to 900.
+
+> **Zone-governance ruling (2026-05-23 - #DZ-5390)** Yusuf: risk-ledger carry-out backlog term, final. The flat `rotation_segment_count*15 + defer_segment_count*10` backlog bonus recorded in #DZ-5313 weighted raw segment counts rather than the time actually spent under rotation/defer coverage, so a window split into many tiny segments was over-credited while one long segment was under-credited. The backlog bonus is now computed from the post-attenuation overlap DURATIONS and ROUNDS UP: `carry_out_ms = min(carry_in_ms + actionable_duration_ms + ceil(rotation_overlap_ms / 6) + ceil(defer_overlap_ms / 11), 900)`, taking each window's final `rotation_overlap_ms` (after its #DZ-5308 layer) and `defer_overlap_ms` (after #DZ-5310). In integer arithmetic ceil(x/n) is -(-x // n). This is final and revises the carry-out composition recorded in #DZ-5313 on that one point only: the carry-in formula, the ceil idle-gap decay from #DZ-5378, the ledger-adjusted credit and the 900 ms cap from #DZ-5368 are all unchanged, and `rotation_segment_count`/`defer_segment_count` keep their meanings everywhere else they are used. ROUNDING: rotation_overlap_ms // 6 = CEIL. ROUNDING: defer_overlap_ms // 11 = CEIL.
 
 ### Change record 0284 — vault (north) lane
 An engineer floated, informally, that muted alerts might still open drift windows; this was never ratified and is not a governing decision, recorded only so it is not re-litigated.

@@ -491,11 +491,14 @@ def build_drift_windows(
             ledger_adjusted_actionable_ms = (
                 window["actionable_duration_ms"] + (carry_in_ms // 4)
             )
+            # Carry-out backlog term revised to rounded-up post-attenuation overlaps
+            # per #DZ-5390 final, superseding the flat segment-count weights in #DZ-5313.
+            # ceil(x/n) = -(-x // n).
             carry_out_ms = min(
                 carry_in_ms
                 + window["actionable_duration_ms"]
-                + (window["rotation_segment_count"] * 15)
-                + (window["defer_segment_count"] * 10),
+                + (-(-window["rotation_overlap_ms"] // 6))
+                + (-(-window["defer_overlap_ms"] // 11)),
                 CARRY_OUT_CAP,   # per #DZ-5368
             )
             window["idle_gap_ms"] = idle_gap_ms
